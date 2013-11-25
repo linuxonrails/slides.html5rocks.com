@@ -15,18 +15,18 @@
 
     wsSecureCb = document.getElementById("wsSecureCb");
     wsSecureCb.onclick = wsToggleTls;
-    
+
     wsSecureCbLabel = document.getElementById("wsSecureCbLabel")
-    
+
     wsUri = document.getElementById("wsUri");
     wsToggleTls();
-    
+
     wsConnectBut = document.getElementById("wsConnectBut");
     wsConnectBut.onclick = wsDoConnect;
-    
+
     wsDisconnectBut = document.getElementById("wsDisconnectBut");
     wsDisconnectBut.onclick = wsDoDisconnect;
-    
+
     wsMessage = document.getElementById("wsMessage");
 
     wsSendBut = document.getElementById("wsSendBut");
@@ -38,7 +38,7 @@
     wsClearLogBut.onclick = wsClearLog;
 
     wsUserDisconnectedFlag = false;
-    
+
     wsSetGuiConnected(false);
   }
 
@@ -52,8 +52,8 @@
 
   function wsDoConnect() {
     if (!window.WebSocket) {
-      wsLogToConsole('<span style="color: red;"><strong>Error:</strong>' + 
-          'Your browser does not have native support for WebSocket</span>',
+      wsLogToConsole('<span style="color: red;"><strong>Error:</strong>' +
+          'Tu navegador no soporta nativamente WebSocket</span>',
           true);
       return;
     }
@@ -69,9 +69,9 @@
     wsUserDisconnectedFlag = true;
     websocket.close()
   }
-  
+
   function wsDoSend() {
-    wsLogToConsole("SENT: " + wsMessage.value);
+    wsLogToConsole("ENVIADO: " + wsMessage.value);
     websocket.send(wsMessage.value);
   }
 
@@ -93,12 +93,12 @@
   }
 
   function wsOnOpen(evt) {
-    wsLogToConsole("CONNECTED");
+    wsLogToConsole("CONECTADO");
     wsSetGuiConnected(true);
   }
-  
+
   function wsOnClose(evt) {
-    wsLogToConsole("DISCONNECTED");
+    wsLogToConsole("DESCONECTADO");
 
     //console.log("wsUserDisconnectedFlag=" + wsUserDisconnectedFlag);
     // If the user tried a regular WebSocket connection it it closed because of
@@ -106,8 +106,8 @@
     // to use a secure WebSocket instead.
     //
     if (!wsUserDisconnectedFlag && !wsSecureCb.checked) {
-      wsLogToConsole("NOTE: If the connection failed, check the <strong>" + 
-          "Use secure WebSocket (TLS/SSL)</strong> checkbox and try again.",
+      wsLogToConsole("NOTA: Si la conexión falla, comprueba el <strong>" +
+          "uso de <em>secure</em> WebSocket (TLS/SSL)</strong> y prueba de nuevo.",
           true);
     }
 
@@ -115,9 +115,9 @@
 
     wsSetGuiConnected(false);
   }
-  
+
   function wsOnMessage(evt) {
-    wsLogToConsole('<span style="color: blue;">RESPONSE: ' + evt.data+'</span>');
+    wsLogToConsole('<span style="color: blue;">RESPUESTA: ' + evt.data+'</span>');
   }
 
   function wsOnError(evt) {
