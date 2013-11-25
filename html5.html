@@ -23,7 +23,7 @@
   <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=Edge;chrome=1" />
-    <title>HTML5 Presentation</title>
+    <title>Introducción a HTML5</title>
     <link href="http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Sans+Mono" rel="stylesheet" type="text/css" />
     <link id="prettify-link" href="src/prettify/prettify.css" rel="stylesheet" disabled />
     <link href="styles/fonts.css" rel="stylesheet" type="text/css" media="screen" />
@@ -37,8 +37,8 @@
   <body>
     <div id="flex-container">
     <nav id="helpers">
-      <button title="Previous slide" id="nav-prev" class="nav-prev">&#8701;</button> 
-      <button title="Jump to a random slide" id="slide-no">5</button> 
+      <button title="Previous slide" id="nav-prev" class="nav-prev">&#8701;</button>
+      <button title="Jump to a random slide" id="slide-no">5</button>
       <button title="Next slide" id="nav-next" class="nav-next">&#8702;</button>
       <menu>
         <button type="checkbox" data-command="toc" title="Table of Contents" class="toc">TOC</button>
@@ -49,53 +49,54 @@
       </menu>
     </nav>
     <div class="slides">
-      <div id="presentation-counter">Loading...</div>
+      <div id="presentation-counter">Cargando...</div>
         <div class="slide" id="landing-slide">
           <section class="middle">
-            <p>This presentation is an HTML5 website</p>
-            <p>Press <span id="left-init-key" class="key">&rarr;</span> key to advance.</p>
-            <p id="disclaimer-message">Having issues seeing the presentation? Read the <a href="disclaimer.html">disclaimer</a></p>
+            <p>Ésta presentación es una web HTML5 :)</p>
+            <p><small>Presiona <span id="left-init-key" class="key">&rarr;</span> para avanzar.</small></p>
+            <!-- <p id="disclaimer-message">Having issues seeing the presentation? Read the <a href="disclaimer.html">disclaimer</a></p> -->
           </section>
           <aside class="note">
             <section>
-              Welcome! (This field is for speaker notes and commentary.)
+              <!-- Welcome! (This field is for speaker notes and commentary.) -->
             </section>
-          </aside> 
+          </aside>
         </div>
 
         <div class="slide" id="controls-slide">
-          <header>Slides controls</header>
+          <header>Controles</header>
           <section>
             <ul>
-              <li><span class="key">&larr;</span> and <span class="key">&rarr;</span> to move around.</li>
-              <li><span class="key">Ctrl/Command</span> and <span class="key">+</span> or <span class="key">-</span> to zoom in and out if slides don’t fit.</li>
-              <li><span class="key">S</span> to view page source.</li>
-              <li><span class="key">T</span> to change the theme.</li>
-              <li><span class="key">H</span> to toggle syntax highlight.</li>
-              <li><span class="key">N</span> to toggle speaker notes.</li>
-              <li><span class="key">3</span> to toggle 3D effect.</li>
-              <li><span class="key">0</span> to toggle help.</li>
+              <li><span class="key">&larr;</span> y <span class="key">&rarr;</span> para moverse.</li>
+              <li><span class="key">Ctrl</span> y tecla <span class="key">+</span> o <span class="key">-</span> para acercar/alejar.</li>
+              <li><span class="key">s</span> para ver el código fuente.</li>
+              <li><span class="key">t</span> para cambiar de tema.</li>
+              <li><span class="key">h</span> para resaltar la sintaxis.</li>
+              <li><span class="key">n</span> para mostrar u ocultar notas al pie.</li>
+              <li><span class="key">3</span> para des/activar el efecto 3D.</li>
+              <li><span class="key">0</span> para mostrar/ocultar la ayuda.</li>
             </ul>
           </section>
         </div>
 
-        <div class="slide" id="title-slide">
+        <div class="slide" id="title-slide" style="background-color: white !important; background-image: none !important;">
           <section class="middle">
             <hgroup>
               <h1>
-                HTML5*
+                Introducción a HTML5<supper>*</supper>
               </h1>
               <h2>
-                Web Development to the next level
+                Desarrollo Web al siguiente nivel
               </h2>
             </hgroup>
-            <p>*Including other next generation technologies of the Web Development stack</p>
+            <p>(<supper>*</supper> y algunas otras nuevas tecnologías web)</p>
+            <img src="src/html5-insignia.png" /></p>
           </section>
         </div>
 
 
         <div class="slide" id="timeline-slide">
-          <header>Rough Timeline of Web Technologies</header>
+          <header>Cronología <em>aproximada</em> de la web</header>
           <section>
 
             <ul id="timeline">
@@ -105,7 +106,7 @@
               <li data-auto><span class="year">1997</span> <span class="html">HTML 4</span></li>
               <li data-auto><span class="year">1998</span> <span class="css">CSS 2</span></li>
               <li data-auto><span class="year">2000</span> <span class="html">XHTML 1</span></li>
-              <li><span class="year"><em class="stroke">2002</em></span> <span class="css">Tableless Web Design</span></li>
+              <li><span class="year"><em class="stroke">2002</em></span> <span class="css">¡Diseño web sin tablas!</span></li>
               <li><span class="year"><em class="stroke">2005</em></span> <span class="js">AJAX</span></li>
               <li><span class="year"><em class="stroke">2009</em></span> <span class="html">HTML 5</span></li>
             </ul>
@@ -125,7 +126,7 @@
         </div>
 
         <div class="slide" id="table-of-contents">
-          <header><h1>Today, we will cover...</h1></header>
+          <header><h1>Hoy hablaremos de...</h1></header>
           <section>
             <ul id="toc-list">
             </ul>
@@ -134,9 +135,10 @@
 
         <div class="slide transitionSlide" id="offline-storage-title">
           <section class="middle">
-            <h2>Offline / Storage</h2>
-            <p>Expect the unexpected</p>
+            <h2>Almacenamiento / <em title="Sin conexión a Internet">Offline</em></h2>
+            <p><strong>Espera lo inesperable</strong></p>
             <img src="http://www.html5rocks.com/static/images/identity/classes_64/HTML5_Offline_Storage_64.png" title="HTML5 Offline &amp; Storage" alt="HTML5 Offline &amp; Storage">
+            <p>(cuando se pierde la conexión o queremos desarrollar una <strong>aplicación</strong> offline...)</p>
           </section>
         </div>
 
@@ -144,17 +146,17 @@
           <header><span class="js">JS</span> <h1>Web Storage</h1></header>
           <section>
 <pre>
-// use localStorage for persistent storage
-// use sessionStorage for per tab storage
+// se utiliza localStorage para almacenamiento persistente
+// se utiliza sessionStorage para almacenamiento en la sesión
 saveButton.addEventListener('click', function () {
   window.<b>localStorage</b>.<b>setItem</b>('value', area.value);
   window.<b>localStorage</b>.<b>setItem</b>('timestamp', (new Date()).getTime());
 }, false);
 textarea.value = window.<b>localStorage</b>.<b>getItem</b>('value');
 </pre>
-            <p id="localstorage-message">Save text value on the client side (crash-safe)</p>
-            <textarea id="ta" placeholder="Type your text here..."></textarea>
-            <button id="save-ta">Save</button>
+            <p id="localstorage-message">Ejemplo: guardar el siguiente texto en el lado del cliente</p>
+            <textarea id="ta" placeholder="Escribe un texto..."></textarea>
+            <button id="save-ta">Guardar</button>
             <p id="ta-log"></p>
             <script defer>
               (function(){
@@ -185,17 +187,17 @@ textarea.value = window.<b>localStorage</b>.<b>getItem</b>('value');
                   if (window.localStorage.getItem('value')) {
                     delta = ((new Date()).getTime() - (new Date()).setTime(window.localStorage.getItem('timestamp'))) / 1000;
                     if (new_save) {
-                      log.textContent = 'Saved. Content will be available after browser refresh/reopen.';
+                      log.textContent = 'Guardado. El contenido estará disponible ál reabrir/refrescar.';
                       setTimeout(function() {
                         log.textContent = '';
                       }, 3000);
                     } else {
-                      log.textContent = 'last saved: ' + delta + 's ago';
+                      log.textContent = 'Se guardó por última vez hace ' + delta + ' segundos';
                     }
                   }
                 }
 
-              })();  
+              })();
             </script>
           </section>
         </div>
@@ -211,10 +213,10 @@ db.<b>transaction</b>(function(tx) {
 
           <div class="center" id="websqldb-example">
             <input type="text" id="todoitem" />
-            <button onclick="webSqlSample.newRecord()">new to do item</button>
-            <button onclick="webSqlSample.createTable()">create table</button>
-            <button onclick="webSqlSample.dropTable()">drop table</button>
-            <p>See the generated database: Developer > Developer Tools > Storage</p>
+            <button onclick="webSqlSample.newRecord()">nuevo elemento</button>
+            <button onclick="webSqlSample.createTable()">crear tabla</button>
+            <button onclick="webSqlSample.dropTable()">borrar tabla</button>
+            <p>Ver la base de datos generada: Developer > Developer Tools > Storage</p>
             <ul class="record-list" id="db-results"></ul>
             <div id="db-log"></div>
           </div>
@@ -224,7 +226,7 @@ db.<b>transaction</b>(function(tx) {
               var log = document.getElementById('db-log');
               if (window.openDatabase) {
                 db = openDatabase("DBTest", "1.0", "HTML5 Database API example", 200000);
-                showRecords();  
+                showRecords();
               }
               document.getElementById('db-results').addEventListener('click', function(e) { e.preventDefault(); }, false);
 
@@ -239,9 +241,9 @@ db.<b>transaction</b>(function(tx) {
                   tx.executeSql("SELECT * FROM Table1Test", [], function(tx, result) {
                     for (var i = 0, item = null; i < result.rows.length; i++) {
                       item = result.rows.item(i);
-                      document.getElementById('db-results').innerHTML += 
+                      document.getElementById('db-results').innerHTML +=
                           '<li><span contenteditable="true" onkeyup="webSqlSample.updateRecord('+item['id']+', this)">'+
-                          item['text'] + '</span> <a href="#" onclick="webSqlSample.deleteRecord('+item['id']+')">[Delete]</a></li>';
+                          item['text'] + '</span> <a href="#" onclick="webSqlSample.deleteRecord('+item['id']+')">[Borrar]</a></li>';
                     }
                   });
                 });
@@ -263,7 +265,7 @@ db.<b>transaction</b>(function(tx) {
                       function(tx, result) {
                         log.innerHTML = '';
                         showRecords();
-                      }, 
+                      },
                       onError);
                 });
               }
@@ -277,7 +279,7 @@ db.<b>transaction</b>(function(tx) {
               function deleteRecord(id) {
                 db.transaction(function(tx) {
                   tx.executeSql("DELETE FROM Table1Test WHERE id=?", [id],
-                      function(tx, result) { showRecords() }, 
+                      function(tx, result) { showRecords() },
                       onError);
                 });
               }
@@ -286,7 +288,7 @@ db.<b>transaction</b>(function(tx) {
               function dropTable() {
                 db.transaction(function(tx) {
                   tx.executeSql("DROP TABLE Table1Test", [],
-                      function(tx) { showRecords() }, 
+                      function(tx) { showRecords() },
                       onError);
                 });
               }
@@ -304,7 +306,7 @@ db.<b>transaction</b>(function(tx) {
       </div>
 
       <div class="slide offline-storage" id="indexed-db">
-          <header><span class="js">JS</span> <h1>IndexedDB</h1></header>
+          <header><span class="js">JS</span> <h1>IndexedDB (en desuso)</header>
           <section>
 <pre>var idbRequest = window.<b>indexedDB</b>.<b>open</b>('Database Name');
 idbRequest.onsuccess = function(event) {
@@ -317,8 +319,8 @@ idbRequest.onsuccess = function(event) {
           <div class="center" id="indexeddb-example">
             <input type="text" placeholder="key" id="idb-key" size="10" /> <input type="text" placeholder="value" id="idb-value" size="15" />
             <button onclick="indexedDbSample.idbSet()">set</button>
-            <button onclick="indexedDbSample.idbCreate()">create objectStore</button>
-            <button onclick="indexedDbSample.idbRemove()">remove objectStore</button>
+            <button onclick="indexedDbSample.idbCreate()">crear objectStore</button>
+            <button onclick="indexedDbSample.idbRemove()">eliminar objectStore</button>
             <div id="idb-log"></div>
             <div class="record-list" id="idb-results-wrapper"></div>
           </div>
@@ -340,7 +342,7 @@ idbRequest.onsuccess = function(event) {
 
               // Open our IndexedDB if the browser supports it.
               if (window.indexedDB) {
-                idbRequest_ = window.indexedDB.open("Test", "A test object store.");
+                idbRequest_ = window.indexedDB.open("Test"); // , "A test object store.");
                 idbRequest_.onerror = idbError_;
                 idbRequest_.addEventListener('success', function(event) {
                   idb_ = event.srcElement.result;
@@ -375,7 +377,7 @@ idbRequest.onsuccess = function(event) {
                             '=> <span class="keyval" contenteditable onblur="indexedDbSample.updateValue(\'',
                             cursor.key, '\', this)">', cursor.value, '</span>&nbsp; ',
                             '<a href="javascript:void(0)" onclick="indexedDbSample.deleteKey(\'',
-                            cursor.key, '\')">[Delete]</a></li>');
+                            cursor.key, '\')">[Borrar]</a></li>');
                   cursor['continue']();
                 }
                 request.onerror = idbError_;
@@ -517,7 +519,7 @@ idbRequest.onsuccess = function(event) {
       </div>
 
         <div class="slide offline-storage" id="app-cache">
-          <header><span class="js">JS</span> <h1>Application Cache</h1></header>
+          <header><span class="js">JS</span> <h1>Application Cache (Manifest)</h1></header>
           <section class="appcache-examples">
 <pre>&lt;html <b>manifest="cache.appcache"</b>&gt;</pre>
 
@@ -544,7 +546,7 @@ NETWORK:
 *
 </pre>
 
-            <p id="appcache-message">Turn off your internet connection and refresh this page!
+            <p id="appcache-message">Desactiva la conexión a internet y refresla la página!
               <img src="src/refresh.png" onclick="window.location.reload();"/></p>
           </section>
         </div>
@@ -584,22 +586,22 @@ NETWORK:
     <pre style="font-size: 80%">
 // Request Status
 <b>webkitStorageInfo</b>.<b>queryUsageAndQuota</b>(webkitStorageInfo.TEMPORARY, function(used, remaining) {
-    console.log("Used quota: " + used + ", remaining quota: " + remaining);
+    console.log("Cuota utilizada: " + used + ", cuota restante: " + remaining);
   }
 );
 
 // Request Quota (only for File System API)
 <b>webkitStorageInfo</b>.<b>requestQuota</b>(webkitStorageInfo.PERSISTENT, 10 * 1024 * 1024, function(used) {
-    console.log("Used quota: " + used + ", remaining quota: " + remaining);
+    console.log("Cuota utilizada: " + used + ", cuota restante: " + remaining);
   }
 );</pre>
             <table border="0" cellspacing="5" cellpadding="5">
-              <tr><th></th><th>Default (Temporary)</th><th>Quota Requested (Persistent)</th></tr>
-              <tr><td>Web Storage</td><td>5Mb</td><td rowspan="4">N/A</td></tr>
-              <tr><td>App Cache</td><td rowspan="4">10% of available disk in total<div class="quota-info-bubble"><button id="temp-query">Show Usage</button><span>Used: <output>--</output> Bytes</span><span>Remaining: <output>--</output> Bytes</span></div></td></tr>
+              <tr><th></th><th>Por defecto (temporal)</th><th>Cuota requerida (Persistente)</th></tr>
+              <tr><td>Web Storage</td><td>~5Mb <small>(varía según navegador)</small></td><td rowspan="4">N/A</td></tr>
+              <tr><td>App Cache</td><td rowspan="4">10% del espacio en disco total<div class="quota-info-bubble"><button id="temp-query">Mostrar uso</button><span>Usada: <output>--</output> Bytes</span><span>Disponible: <output>--</output> Bytes</span></div></td></tr>
               <tr><td>IndexedDB</td></tr>
               <tr><td>WebSQL</td></tr>
-              <tr><td>File System API</td><td>Arbitrary<div class="quota-info-bubble"><input id="requested-quota" type="text" placeholder="Request quota amount..."/> in Bytes <button id="perm-request" style="margin-left: 5px">Request Quota</button><span>Used: <output>--</output> Bytes</span></div></td></tr>
+              <tr><td>File System API</td><td>Arbitraria<div class="quota-info-bubble"><input id="requested-quota" type="text" placeholder="Cantidad de cuota requerida..."/> en Bytes <button id="perm-request" style="margin-left: 5px">Cuota requerida</button><span>Usada: <output>--</output> Bytes</span></div></td></tr>
             </table>
           </section>
           <script>
@@ -615,7 +617,7 @@ NETWORK:
                       }, function(error) { alert(error) });
 
                 }, false);
-                
+
               document.querySelector('#perm-request').addEventListener(
                 'click', function() {
                   webkitStorageInfo.requestQuota(
@@ -632,8 +634,8 @@ NETWORK:
 
         <div class="slide transitionSlide" id="realtime-title">
           <section class="middle">
-            <h2>Realtime / Communication</h2>
-            <p>Stay connected</p>
+            <h2>Tiempo Real / Comunicación</h2>
+            <p>Permanecer conectado</p>
             <img src="http://www.html5rocks.com/static/images/identity/classes_64/HTML5_Connectivity_64.png" title="HTML5 Realtime &amp; Communication" alt="HTML5 Realtime &amp; Communication">
           </section>
         </div>
@@ -642,14 +644,14 @@ NETWORK:
         <div class="slide realtime-communication" id="web-workers">
           <header><span class="js">JS</span> <h1>Web Workers</h1></header>
           <section>
-main.js:
-<pre>
+<pre style="font-size: 90%;">
+// main.js:
 var worker = new <b>Worker</b>('task.js');
 worker.<b>onmessage</b> = function(event) { alert(event.data); };
 worker.<b>postMessage</b>('data');
 </pre>
-task.js:
 <pre>
+// task.js:
 self.<b>onmessage</b> = function(event) {
   // Do some work.
   self.<b>postMessage</b>("recv'd: " + event.data);
@@ -661,11 +663,12 @@ self.<b>onmessage</b> = function(event) {
             <img src="http://maps.google.com/maps/api/staticmap?center=13,13&zoom=3&size=680x200&sensor=false"/>
           </div>
           <div style="margin-top:5px">
-            <button id="find-route-y">Find route with Workers</button>
-            <button id="find-route-n">Find route without Workers</button>
-            <p id="w-loading">Loading Route...</p>
+            Encontrar ruta
+            <button id="find-route-y">con Workers</button>
+            <button id="find-route-n">sin Workers</button>
+            <p id="w-loading">Cargando ruta...</p>
           </div>
-          <p style="font-size: 90%;" class="center">Try dragging the map while the complex route is being calculated (you will only be able to do that with Workers!)</p>
+          <p style="font-size: 90%;" class="center">Prueba a arrastra el mapa mientras la ruta se calcula (¡solo es posible con workers!)</p>
         </div>
         <script src="src/webworkers/points.js" defer></script>
         <script src="src/webworkers/annealing.js" defer></script>
@@ -857,7 +860,7 @@ socket.<b>onclose</b> = function(event) { alert('closed'); }
           <section>
 <pre>if (window.<b>webkitNotifications</b>.<b>checkPermission</b>() == 0) {
   // you can pass any url as a parameter
-  window.<b>webkitNotifications</b>.<b>createNotification</b>(tweet.picture, tweet.title, 
+  window.<b>webkitNotifications</b>.<b>createNotification</b>(tweet.picture, tweet.title,
       tweet.text).<b>show</b>();
 } else {
   window.<b>webkitNotifications</b>.<b>requestPermission</b>();
@@ -918,7 +921,7 @@ socket.<b>onclose</b> = function(event) { alert('closed'); }
 
         <div class="slide transitionSlide" id="hardware-access-title">
           <section class="middle">
-            <h2>File / Hardware Access</h2>
+            <h2>Acceso a Fichero / Dispositivos</h2>
             <p>Deeper integration with the Operating System</p>
             <img src="http://www.html5rocks.com/static/images/identity/classes_64/HTML5_Device_Access_64.png" title="HTML5 Device Access" alt="HTML5 Device Access">
           </section>
@@ -1306,7 +1309,7 @@ window.addEventListener('<em>deviceorientation</em>', function(event) {
 
         <div class="slide transitionSlide" id="semantics-markup-title">
           <section class="middle">
-            <h2>Semantics &amp; Markup</h2>
+            <h2>Semántica &amp; lenguaje de marcado</h2>
             <p>More meaningful elements</p>
             <img src="http://www.html5rocks.com/static/images/identity/classes_64/HTML5_Semantics_64.png" title="HTML5 Semantics &amp; Markup" alt="HTML5 Semantics &amp; Markup">
           </section>
@@ -1444,8 +1447,8 @@ Goal is: <progress value="75" max="100">3/4 complete</progress>
           <header><span class="html">HTML</span> <h1>ARIA attributes</h1></header>
           <section>
             <pre>&lt;ul id="tree1"
-      <b>role</b>="<b>tree</b>" 
-      tabindex="0" 
+      <b>role</b>="<b>tree</b>"
+      tabindex="0"
       <b>aria-labelledby</b>="label_1">
   &lt;li <b>role</b>="<b>treeitem</b>" tabindex="-1" <b>aria-expanded</b>="true">Fruits&lt;/li>
   &lt;li <b>role</b>="<b>group</b>">
@@ -1511,7 +1514,7 @@ Goal is: <progress value="75" max="100">3/4 complete</progress>
               width: 90%;
               -webkit-box-shadow: rgba(0, 0, 0, 0.3) 0 4px 6px;
             }
-          </style>          
+          </style>
           <section>
             <div>
 <pre>type="<em>text</em>"</pre>
@@ -1546,7 +1549,7 @@ Goal is: <progress value="75" max="100">3/4 complete</progress>
 
         <div class="slide transitionSlide" id="graphics-multimedia-title">
           <section class="middle">
-            <h2>Graphics / Multimedia</h2>
+            <h2>Gráficos / Multimedia</h2>
             <p>2D &amp; 3D</p>
             <img src="http://www.html5rocks.com/static/images/identity/classes_64/HTML5_3D_Effects_64.png" title="HTML5 3D &amp; Effects" alt="HTML5 3D &amp; Effects">
             <img src="http://www.html5rocks.com/static/images/identity/classes_64/HTML5_Multimedia_64.png" title="HTML5 Multimedia" alt="HTML5 Multimedia">
@@ -1652,7 +1655,7 @@ document.getElementById("video").<b>play</b>();
             }
           </script>
         </div>
-        
+
         <div class="slide multimedia" id="video-track">
           <style>
             #video-column {
@@ -1675,7 +1678,7 @@ document.getElementById("video").<b>play</b>();
 &lt;<b>video</b> width="390" id="clip" <b>controls</b>>
   &lt;<b>source</b> src="Google_Developer_Stories.webm"
           type='video/webm; codecs="vp8, vorbis"' />
-  &lt;<b>track</b> label="English subtitles" kind="subtitles" srclang="en" 
+  &lt;<b>track</b> label="English subtitles" kind="subtitles" srclang="en"
          src="<em>video-subtitles-en.vtt</em>" default />
 &lt;/<b>video</b>>
 </pre>
@@ -1720,55 +1723,55 @@ But it cant happen without you and your ideas
 We want to know you better
 
 8
-00:00:18.700 --> 00:00:21.000 
+00:00:18.700 --> 00:00:21.000
 so we created a new place just for that
 
 9
-00:00:21.000 --> 00:00:22.000 
+00:00:21.000 --> 00:00:22.000
 to hear from <u>you</u>
 
 10
-00:00:22.500 --> 00:00:25.000 
+00:00:22.500 --> 00:00:25.000
 We want to hear what inspires you as a developer
 
 11
-00:00:25.500 --> 00:00:27.000 
+00:00:25.500 --> 00:00:27.000
 and how we can help.
 
 12
-00:00:27.000 --> 00:00:30.800 
+00:00:27.000 --> 00:00:30.800
 Here you can record a video, share stories with us and more
 
 13
-00:00:31.000 --> 00:00:34.000 
+00:00:31.000 --> 00:00:34.000
 Let us know what being a Google developer means to you
 
 14
-00:00:34.000 --> 00:00:38.200 
+00:00:34.000 --> 00:00:38.200
 and you can talk to us in person at Google Developer events all over the world.
 
 15
-00:00:38.500 --> 00:00:41.000 
+00:00:38.500 --> 00:00:41.000
 so we can learn how to support you better.
 
 16
-00:00:41.000 --> 00:00:44.600 
+00:00:41.000 --> 00:00:44.600
 Oh, btw, we also started rolling a new site for Google Developers
 
 17
-00:00:44.700 --> 00:00:49.400 
+00:00:44.700 --> 00:00:49.400
 Not just code but community, news, tools and other resources
 
 18
-00:00:49.400 --> 00:00:51.000 
+00:00:49.400 --> 00:00:51.000
 and cake
 
 19
-00:00:51.200 --> 00:00:54.000 
+00:00:51.200 --> 00:00:54.000
 Like any open source project it's a work in progress
 
 20
-00:00:54.100 --> 00:00:57.000 
+00:00:54.100 --> 00:00:57.000
 with your help it can be great
 
 21
@@ -1776,7 +1779,7 @@ with your help it can be great
 developers.google.com/stories
 
 21
-00:01:00.500 --> 00:01:04.000 
+00:01:00.500 --> 00:01:04.000
 Change is important to the Web. Help us keep changing it together
             </textarea>
           </section>
@@ -1886,7 +1889,7 @@ pre<b>:-webkit-full-screen</b> {
           if (document.webkitIsFullScreen) {
             document.cancelFullScreen();
           } else {
-            doFullScreen(elem);            
+            doFullScreen(elem);
           }
         }
 
@@ -1895,7 +1898,7 @@ pre<b>:-webkit-full-screen</b> {
       </script>
     </div>
 
-        
+
         <div class="slide effects" id="canvas-2d">
           <header><span class="html">HTML</span> <span class="js">JS</span> <h1>Canvas 2D</h1></header>
           <section>
@@ -2013,7 +2016,7 @@ pre<b>:-webkit-full-screen</b> {
             }, false);
             svg.appendChild(circle);
             container.appendChild(svg);
-            
+
             function changeSvgCircleRadius() {
               var r = document.getElementById('svg-circle-r').value;
               document.getElementById('svg-circle-r-value').innerHTML = r;
@@ -2054,40 +2057,40 @@ pre<b>:-webkit-full-screen</b> {
   background: white;
 }
 </pre>
-            <div class="example"> 
-              <div class="row">Row 1</div> 
-              <div class="row">Row 2</div> 
-              <div class="row">Row 3</div> 
-              <div class="row">Row 4</div> 
-            </div>  
-            <h2>Image-like display</h2> 
+            <div class="example">
+              <div class="row">Row 1</div>
+              <div class="row">Row 2</div>
+              <div class="row">Row 3</div>
+              <div class="row">Row 4</div>
+            </div>
+            <h2>Image-like display</h2>
             <pre>div {
   display: <b>inline-block</b>;
 }
-</pre> 
-          </section> 
+</pre>
+          </section>
 
-          <section class="right"> 
-            <h2>Specific attributes</h2> 
+          <section class="right">
+            <h2>Specific attributes</h2>
             <pre>input<b>[type="text"]</b> {
   background: #eee;
-}</pre>          
+}</pre>
 
-            <h2>Negation</h2> 
+            <h2>Negation</h2>
             <pre><b>:not</b>(.box) {
-  color: #00c; 
-}            
+  color: #00c;
+}
 <b>:not</b>(span) {
-  display: block; 
-}  
-</pre> 
+  display: block;
+}
+</pre>
 
-            <h2>More specific targetting</h2> 
+            <h2>More specific targetting</h2>
             <pre>h2:<b>first-child</b> { ... }
 
-div.text <b>&gt;</b> div { ... } 
-h2 <b>+</b> header { ... } 
-</pre>            
+div.text <b>&gt;</b> div { ... }
+h2 <b>+</b> header { ... }
+</pre>
           </section>
           <footer><a href="http://www.w3.org/TR/CSS2/selector.html#pattern-matching">CSS2 selectors</a> and <a href="http://www.w3.org/TR/css3-selectors/#selectors">CSS3 selectors</a> introduced some of the ones demonstrated here.</footer>
         </div>
@@ -2161,34 +2164,34 @@ header {
 
             <div id="columns-no-example" class="example">
               <p>
-                In March 1936, an unusual confluence of forces occurred in 
+                In March 1936, an unusual confluence of forces occurred in
                 Santa Clara County.
               </p>
               <p>
-                A long cold winter delayed the blossoming of the millions of 
-                cherry, apricot, peach, and prune plum trees covering hundreds 
-                of square miles of the Valley floor. Then, unlike many years, 
-                the rains that followed were light and too early to knock 
+                A long cold winter delayed the blossoming of the millions of
+                cherry, apricot, peach, and prune plum trees covering hundreds
+                of square miles of the Valley floor. Then, unlike many years,
+                the rains that followed were light and too early to knock
                 the blossoms from their branches.
               </p>
               <p>
-                Instead, by the billions, they all burst open at once. 
-                Seemingly overnight, the ocean of green that was the Valley 
-                turned into a low, soft, dizzyingly perfumed cloud of pink 
-                and white. Uncounted bees and yellow jackets, newly born, 
-                raced out of their hives and holes, overwhelmed by this 
+                Instead, by the billions, they all burst open at once.
+                Seemingly overnight, the ocean of green that was the Valley
+                turned into a low, soft, dizzyingly perfumed cloud of pink
+                and white. Uncounted bees and yellow jackets, newly born,
+                raced out of their hives and holes, overwhelmed by this
                 impossible banquet.
               </p>
               <p>
                 Then came the wind.
               </p>
               <p>
-                It roared off the Pacific Ocean, through the nearly 
-                uninhabited passes of the Santa Cruz Mountains and then, 
-                flattening out, poured down into the great alluvial plains 
-                of the Valley. A tidal bore of warm air, it tore along the 
-                columns of trees, ripped the blossoms apart and carried them 
-                off in a fluttering flood of petals like foam rolling up a 
+                It roared off the Pacific Ocean, through the nearly
+                uninhabited passes of the Santa Cruz Mountains and then,
+                flattening out, poured down into the great alluvial plains
+                of the Valley. A tidal bore of warm air, it tore along the
+                columns of trees, ripped the blossoms apart and carried them
+                off in a fluttering flood of petals like foam rolling up a
                 beach.
               </p>
               <p>
@@ -2338,7 +2341,7 @@ header {
                  }
                }
             </script>
-          </section> 
+          </section>
         </div>
 
 
@@ -2360,7 +2363,7 @@ header {
               function changeGradients() {
                 var size = document.getElementById('gradients-radial').value;
 
-                document.getElementById('gradients-radial-example').style.backgroundImage = 
+                document.getElementById('gradients-radial-example').style.backgroundImage =
                     '-webkit-radial-gradient(center, circle cover, red, #000 ' + size + '%)';
 
                 document.getElementById('gradients-radial-value').textContent = size;
@@ -2372,13 +2375,13 @@ header {
         <div class="slide styling" id="css-shadow">
           <header><span class="css">CSS</span> <h1>Shadows</h1></header>
           <section>
-<pre class="two-column"><b>text-shadow</b>: 
-  rgba(64, 64, 64, 0.5) 
+<pre class="two-column"><b>text-shadow</b>:
+  rgba(64, 64, 64, 0.5)
   <span id="shadows-text-x-value">0</span>px <input id="shadows-text-x" type="range" min="-9" max="9" value="0" onchange="changeShadow(event)">
   <span id="shadows-text-y-value">0</span>px <input id="shadows-text-y" type="range" min="-9" max="9" value="0" onchange="changeShadow(event)">
   <span id="shadows-text-size-value">0</span>px; <input id="shadows-text-size" type="range" min="0" max="9" value="0" onchange="changeShadow(event)">
-<br><b>box-shadow</b>: 
-  rgba(0, 0, 128, 0.25) 
+<br><b>box-shadow</b>:
+  rgba(0, 0, 128, 0.25)
   <span id="shadows-box-x-value">0</span>px <input id="shadows-box-x" type="range" min="-9" max="9" value="0" onchange="changeShadow(event)">
   <span id="shadows-box-y-value">0</span>px <input id="shadows-box-y" type="range" min="-9" max="9" value="0" onchange="changeShadow(event)">
   <span id="shadows-box-size-value">0</span>px; <input id="shadows-box-size" type="range" min="0" max="9" value="0" onchange="changeShadow(event)">
@@ -2423,7 +2426,7 @@ header {
           <section>
             <pre><b>text-shadow</b>: rgba(0, 0, 0, 0.5) 0 <span id="web20-shadow-value-1">0</span>px <span id="web20-shadow-value-2">0</span>px; <input id="web20-shadow" type="range" min="0" max="9" value="0" onchange="changeWeb20(event)">
 
-background: 
+background:
   -<b>webkit-gradient</b>(linear, left top, left bottom, <input id="web20-gradient" type="range" min="0" max="100" value="0" onchange="changeWeb20(event)">
                    from(rgba(200, 200, 240, <span id="web20-gradient-value-1">0</span>)), to(rgba(255, 255, 255, <span id="web20-gradient-value-2">0</span>)));
 
@@ -2478,7 +2481,7 @@ background:
             <h2>Background sizing</h2>
             <pre>#logo {
   background: url(logo.gif) center center no-repeat;
-  <b>background-size: 
+  <b>background-size:
     <select onchange="changeBackgroundSize(event)">
       <option>auto</option>
       <option>contain</option>
@@ -2491,7 +2494,7 @@ background:
             <p id="resize-message">Resize me! »</p>
             <h2>Multiple backgrounds</h2>
             <pre>div {
-  background: url(src/zippy-plus.png) 10px center no-repeat, 
+  background: url(src/zippy-plus.png) 10px center no-repeat,
               url(src/gray_lines_bg.png) 0 center repeat-x;
 }
             </pre>
@@ -2572,9 +2575,9 @@ border-width: <span id="border_width_value">10</span>px;  <input id="border_widt
           <section>
 <pre>.box {
   display: -webkit-<b>box</b>;
-  -webkit-<b>box-orient</b>: <select onchange='changeBoxOrient(event)'> 
-      <option>horizontal</option> 
-      <option>vertical</option> 
+  -webkit-<b>box-orient</b>: <select onchange='changeBoxOrient(event)'>
+      <option>horizontal</option>
+      <option>vertical</option>
     </select>;
 }
 .box .one, .box .two {
@@ -2583,68 +2586,68 @@ border-width: <span id="border_width_value">10</span>px;  <input id="border_widt
 .box .three {
   -webkit-<b>box-flex</b>: 3;
 }
-</pre> 
+</pre>
 
           <div id="box-orient-example" class="example">
             <div>
               Box one
-            </div> 
+            </div>
             <div>
               Box two
-            </div> 
+            </div>
             <div>
               Box three
-            </div> 
+            </div>
           </div>
 
-          <script defer> 
+          <script defer>
             function changeBoxOrient(event) {
               var el = document.getElementById('box-orient-example');
               el.style.webkitBoxOrient = event.target.value;
-              el.style.MozBoxOrient = event.target.value; 
+              el.style.MozBoxOrient = event.target.value;
             }
-          </script> 
-          </section> 
+          </script>
+          </section>
         </div>
 
 
         <div class="slide styling" id="flex-box-2">
           <header><span class="css">CSS</span> <h1>Flexible Box Model</h1></header>
-          <section> 
+          <section>
 <pre>.box {
     display: -webkit-<b>box</b>;
-    -webkit-<b>box-pack</b>: <select onchange='changeBoxPack(event)'> 
-        <option>center</option> 
-        <option>start</option> 
-        <option>end</option> 
+    -webkit-<b>box-pack</b>: <select onchange='changeBoxPack(event)'>
+        <option>center</option>
+        <option>start</option>
+        <option>end</option>
       </select>;
-    -webkit-<b>box-align</b>: <select onchange='changeBoxAlign(event)'> 
-        <option>center</option> 
-        <option>start</option> 
-        <option>end</option> 
-        <option>stretch</option> 
+    -webkit-<b>box-align</b>: <select onchange='changeBoxAlign(event)'>
+        <option>center</option>
+        <option>start</option>
+        <option>end</option>
+        <option>stretch</option>
       </select>;
   }
-</pre> 
+</pre>
 
             <div id="box-orient-example-2" class="example">
-              <textarea>change the dropdowns and resize this &lt;textarea></textarea> 
+              <textarea>change the dropdowns and resize this &lt;textarea></textarea>
             </div>
 
-            <script defer> 
+            <script defer>
               function changeBoxPack(event) {
                 var el = document.getElementById('box-orient-example-2');
                 el.style.webkitBoxPack = event.target.value;
-                el.style.MozBoxPack = event.target.value; 
+                el.style.MozBoxPack = event.target.value;
               }
               function changeBoxAlign(event) {
                 var el = document.getElementById('box-orient-example-2');
                 el.style.webkitBoxAlign = event.target.value;
-                el.style.MozBoxAlign = event.target.value; 
+                el.style.MozBoxAlign = event.target.value;
               }
-            </script> 
+            </script>
 
-          </section> 
+          </section>
         </div>
 
 
@@ -2777,7 +2780,7 @@ div {
 
        <div class="slide transitionSlide" id="nuts-bolts-title">
           <section class="middle">
-            <h2>Nuts &amp; Bolts</h2>
+            <h2>“Tuercas &amp; Tornillos”</h2>
             <p>Improvements to the core platform</p>
             <img src="http://www.html5rocks.com/static/images/identity/classes_64/HTML5_Performance_64.png" title="HTML5 Performance &amp; Integration" alt="HTML5 Performance &amp; Integration">
           </section>
@@ -2966,9 +2969,9 @@ window.addEventListener('<em>popstate</em>', function(event) {
 
     </div> <!-- slides -->
     </div>
-    
+
     <!--[if lt IE 9]>
-    <script 
+    <script
       src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">
     </script>
     <script>CFInstall.check({ mode: "overlay" });</script>
