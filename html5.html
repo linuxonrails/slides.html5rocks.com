@@ -52,8 +52,14 @@
       <div id="presentation-counter">Cargando...</div>
         <div class="slide" id="landing-slide">
           <section class="middle">
-            <p>Ésta presentación es una web HTML5 :)</p>
-            <p><small>Presiona <span id="left-init-key" class="key">&rarr;</span> para avanzar.</small></p>
+            <p>LimaCON'13: Introducción a HTML5</p>
+            <p>
+              <img src="src/logotipo_linux_malaga_fondo_blanco.png" alt="pinguino linux-malaga" />
+            </p>
+            <p>
+              <small>Ésta presentación es una web HTML5 :)</small><br />
+              <small>Presiona <span id="left-init-key" class="key">&rarr;</span> para avanzar.</small>
+            </p>
             <!-- <p id="disclaimer-message">Having issues seeing the presentation? Read the <a href="disclaimer.html">disclaimer</a></p> -->
           </section>
           <aside class="note">
@@ -90,18 +96,21 @@
                 Desarrollo Web al siguiente nivel
               </h2>
             </hgroup>
-            <p>(<supper>*</supper> y algunas otras nuevas tecnologías web)</p>
-            <img src="src/html5-insignia.png" /></p>
+            <p><small>(<supper>*</supper> y algunas otras nuevas tecnologías web)</small></p>
+            <img src="src/html5-insignia.png" />
+            <p>
+              <a href="http://www.linuxonrails.com/html5">http://www.linuxonrails.com/html5</a><br />
+              <a href="https://github.com/linuxonrails/slides.html5rocks.com">https://github.com/linuxonrails/slides.html5rocks.com</a> <em>fork me!</em>
+            </p>
           </section>
         </div>
-
 
         <div class="slide" id="timeline-slide">
           <header>Cronología <em>aproximada</em> de la web</header>
           <section>
 
             <ul id="timeline">
-              <li data-auto><span class="year">1991</span> <span class="html">HTML</span></li>
+              <li data-auto><span class="year">1991</span> <span class="html">HTML</span> Tim Berners-Lee</sup></li>
               <li data-auto><span class="year">1994</span> <span class="html">HTML 2</span></li>
               <li data-auto><span class="year">1996</span> <span class="css">CSS 1</span> + <span class="js">JavaScript</span></li>
               <li data-auto><span class="year">1997</span> <span class="html">HTML 4</span></li>
@@ -114,6 +123,8 @@
           </section>
         </div>
 
+        <div class="slide" style="background: #0099c5 url(src/queeshtml5.jpg) center bottom no-repeat !important; background-size: contain !important;">
+        </div>
 
         <div class="slide" id="formula-intro-slide">
           <section class="middle formula" data-build>
@@ -123,7 +134,73 @@
             <span class="css">CSS</span>
             +
             <span class="js">JS</span>
+
+            <p>
+              HTML: HyperText Markup Language, el lenguaje básico de la web.<br />
+              CSS: Cascading Style Sheets, hojas de estilo para definir el aspecto del HTML<br />
+              JS: JavaScript, el lenguaje de programación de la web
+            </p>
           </section>
+        </div>
+
+        <div class="slide" style="background: black url(src/html-war.jpg) center bottom no-repeat !important; background-size: contain !important;">
+        </div>
+
+        <div class="slide">
+          <section class="middle">
+            <h2>HTML4 fue un éxito rotundo</h2>
+
+            <h3>HTML5 se basa en HTML4: lo extiende <em>y apenas introduce cambios</em><sup>*</sup>.</h3>
+
+            <p>
+              <img src="src/html4trans_to_html5.jpg" alt="html4 transicional a html5">
+            </p>
+
+            <p>
+              <sup>*</sup>Los cambios introducidos <strong>no rompen la web</strong> para los viejos navegadores.<br />
+
+              ¡<strong style="text-decoration: underline;">no tienes excusa</strong> para no utilizar HTML5!.
+            </p>
+          </section>
+        </div>
+
+        <div class="slide">
+          <section class="middle">
+            <header>
+              <h1>De HTML4 a HTML5: el primer paso</h1>
+            </header>
+
+            <p>Cambiar la declaración de tipo de documento a:</p>
+
+            <h3>&lt;!DOCTYPE html&gt;</h3>
+
+            <p>Es la primera linea y determina el tipo de documento (HTML4, XHTML1, etc)</p>
+          </section>
+        </div>
+
+        <div class="slide" style="background: black url(src/mobile_desert.jpg) center center no-repeat !important; background-size: contain !important;">
+        </div>
+
+        <div class="slide">
+          <section>
+            <header>
+              <h1>El objetivo de HTML5 es...</h1>
+            </header>
+
+            <p>
+              <strong>
+                ...una web universal
+              </strong>
+              <ul>
+                <li>accesible desde cualquier dispositivo</li>
+                <li>accesible para aquellos con discapacidades</li>
+                <li>con o sin acceso a internet</li>
+              </ul>
+            </p>
+          </section>
+        </div>
+
+        <div class="slide" style="background: white url(src/mobiles.jpg) center center no-repeat !important; background-size: contain !important;">
         </div>
 
         <div class="slide" id="table-of-contents">
@@ -139,9 +216,11 @@
             <h2>Almacenamiento / <em title="Sin conexión a Internet">Offline</em></h2>
             <p><strong>Espera lo inesperable</strong></p>
             <img src="http://www.html5rocks.com/static/images/identity/classes_64/HTML5_Offline_Storage_64.png" title="HTML5 Offline &amp; Storage" alt="HTML5 Offline &amp; Storage">
-            <p>(cuando se pierde la conexión o queremos desarrollar una <strong>aplicación</strong> offline...)</p>
+            <p>Cuando se pierde la conexión o queremos desarrollar una <strong>aplicación</strong> offline...</p>
           </section>
         </div>
+
+        <div class="slide offline-storage"
 
         <div class="slide offline-storage" id="web-storage">
           <header><span class="js">JS</span> <h1>Web Storage</h1></header>
@@ -1552,6 +1631,31 @@ Objetivo: <progress value="75" max="100">completados 3 de 4</progress>
                 <figcaption>iPhone</figcaption>
               </figure>
             </div>
+          </section>
+        </div>
+
+        <div class="slide semantics">
+          <section>
+            <header>
+              <h1>Compatibilidad con HTML4</h1>
+            </header>
+            <h2>Cuando IE6 se encuentra con nav, header...</h2>
+            <p>
+              Los navegadores que no soportan HTML5 tratarán los nuevos tags como si fueran <strong><code>div</code></strong>s.
+            </p>
+
+            <h2>IE6 vs input type="email"</h2>
+            <p>
+              Para el tag <strong><code>input</code></strong> los nuevos tipos
+              <strong><code>tel</code></strong>, <strong><code>date</code></strong>, <strong><code>datetime</code></strong>,
+              <strong><code>time</code></strong>, <strong><code>email</code></strong>, etc...
+              son tratados por los viejos navegadores como si fueran cajas de texto: <strong><code>&lt;input type="text"&gt;</code></strong>.
+            </p>
+            <p>
+              La mayoría de los nuevos tipos están soportados en <strong>practicamente todos los navegadores relativamente recientes</strong>.
+            </p>
+
+            <p>¡Hay soluciones javascript para implementar la misma funcionalidad en el resto navegadores!</p>
           </section>
         </div>
 

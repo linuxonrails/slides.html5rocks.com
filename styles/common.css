@@ -28,6 +28,7 @@ h2 {
 h2:first-child {
   margin-top: 0;
 }
+
 section, footer {
   text-shadow: rgba(0, 0, 0, 0.2) 0 2px 5px;
   color: #3f3f3f;
@@ -386,6 +387,11 @@ menu {
 #toc-list img {
   vertical-align: middle;
   margin-left: 15px;
+  margin-right: 15px;
+  float: left;
+}
+#toc-list li {
+  clear: left;
 }
 #ta {
   width: 400px;
@@ -976,3 +982,5 @@ div#wrapping {
 .transitions div.right {
   margin-left: 780px;
 }
+
+
