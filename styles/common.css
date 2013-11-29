@@ -863,7 +863,7 @@ div#wrapping {
   text-align: center;
 }
 #background-textarea {
-  background: white url(http://www.google.com/intl/en_ALL/images/logo.gif) center center no-repeat;
+  background: white url(../src/logo.png) center center no-repeat;
   background-size: auto;
   width: 200px;
   height: 100px;

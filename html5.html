@@ -76,6 +76,7 @@
               <li><span class="key">3</span> para des/activar el efecto 3D.</li>
               <li><span class="key">0</span> para mostrar/ocultar la ayuda.</li>
             </ul>
+            <small><pre>$ python -m SimpleHTTPServer</pre></small>
           </section>
         </div>
 
@@ -521,6 +522,7 @@ idbRequest.onsuccess = function(event) {
         <div class="slide offline-storage" id="app-cache">
           <header><span class="js">JS</span> <h1>Application Cache (Manifest)</h1></header>
           <section class="appcache-examples">
+            <small>gestión en Chrome: chrome://appcache-internals</small>
 <pre>&lt;html <b>manifest="cache.appcache"</b>&gt;</pre>
 
 <pre>
@@ -873,9 +875,9 @@ socket.<b>onclose</b> = function(event) { alert('closed'); }
           <p>Nota: Utiliza este botón si quieres <em>reiniciar</em> los permisos</p>
 
           <br>
-          <p>Introduce tu identificador en twitter para mostrar tu último tweet como una notificación</p>
-          <input type="text" id="username" placeholder="nombre de usuario" />
-          <button id="show-tweets">Mostrar notificación del tweet</button>
+          <p>Una notificación incluye una imagen, un título y un texto</p>
+          <input type="text" id="notification_text" placeholder="texto" />
+          <button id="show-tweets">Mostrar notificación</button>
         </div>
 
           <script defer>
@@ -884,9 +886,13 @@ socket.<b>onclose</b> = function(event) { alert('closed'); }
           }, false);
 
           document.getElementById('show-tweets').addEventListener('click', function() {
-            readTweets();
-          }, false);
+            var notification_text = document.getElementById('notification_text').value;
+            /* readTweets(); */
 
+            window.webkitNotifications.createNotification('src/dwd1.png', '¡Notificación!', notification_text).show()
+
+          }, false);
+          /*
           function readTweets() {
             var username = document.getElementById('username').value;
             if (username == 'username') {
@@ -913,6 +919,7 @@ socket.<b>onclose</b> = function(event) { alert('closed'); }
               }
             }
           }
+          */
           </script>
 
           </section>
@@ -939,7 +946,9 @@ socket.<b>onclose</b> = function(event) { alert('closed'); }
             <ol id="drag-zone">
               <li><img src="src/dwd1.png" draggable class="copy" /></li>
               <li><span class="draggable-text" draggable>Selecciona el texto y arrastrar (el texto original será soltado)</span></li>
+            <!--
               <li><span class="draggable-text" draggable class="overwrite">Selecciona el texto y arrastrar (el texto arrastrado será alterado desde el original)</span></li>
+            -->
             </ol>
             <div id="drop-data">Datos originales</div>
             <div id="drop-zone">Área para soltar</div>
@@ -1053,7 +1062,7 @@ document.querySelector('#dropzone').addEventListener('drop', function(e) {
 </pre>
             <div class="example">
               <div id="dropzone" class="vbox boxcenter center">
-                Arrastra imágnes desde el escritorio
+                Arrastra imágenes desde el escritorio
               </div>
             </div>
             <div id="dnd-thumbnails" class="center"></div>
@@ -1308,57 +1317,57 @@ window.addEventListener('<em>deviceorientation</em>', function(event) {
         <div class="slide transitionSlide" id="semantics-markup-title">
           <section class="middle">
             <h2>Semántica &amp; lenguaje de marcado</h2>
-            <p>More meaningful elements</p>
+            <p>Elementos más significativos</p>
             <img src="http://www.html5rocks.com/static/images/identity/classes_64/HTML5_Semantics_64.png" title="HTML5 Semantics &amp; Markup" alt="HTML5 Semantics &amp; Markup">
           </section>
         </div>
 
         <div class="slide semantics" id="semantic-tags-1">
-          <header><span class="html">HTML</span> <h1>Better semantic tags</h1></header>
+          <header><span class="html">HTML</span> <h1>Tags más semánticos</h1></header>
           <section>
             <pre class="two-column">&lt;body&gt;
   &lt;<b>header</b>&gt;
     &lt;<b>hgroup</b>&gt;
-      &lt;h1&gt;Page title&lt;/h1&gt;
-      &lt;h2&gt;Page subtitle&lt;/h2&gt;
+      &lt;h1&gt;Título de la página&lt;/h1&gt;
+      &lt;h2&gt;Subtítulo de la página&lt;/h2&gt;
     &lt;/hgroup&gt;
   &lt;/header&gt;
 
   &lt;<b>nav</b>&gt;
    &lt;ul&gt;
-     Navigation...
+     Menú de navegación...
    &lt;/ul&gt;
   &lt;/nav&gt;
   &lt;<b>section</b>&gt;
    &lt;<b>article</b>&gt;
      &lt;<b>header</b>&gt;
-       &lt;h1&gt;Title&lt;/h1&gt;
+       &lt;h1&gt;Título&lt;/h1&gt;
      &lt;/header&gt;
      &lt;section&gt;
-       Content...
+       Contenido...
      &lt;/section&gt;
    &lt;/article&gt;
    &lt;article&gt;
      &lt;header&gt;
-       &lt;h1&gt;Title&lt;/h1&gt;
+       &lt;h1&gt;Título de artículo&lt;/h1&gt;
      &lt;/header&gt;
      &lt;section&gt;
-       Content...
+       Contenido...
      &lt;/section&gt;
    &lt;/article&gt;
   &lt;/section&gt;
 
   &lt;<b>aside</b>&gt;
-   Top links...
+   Enlaces relacionados...
   &lt;/aside&gt;
 
   &lt;<b>figure</b>&gt;
     &lt;img src="..."/&gt;
-    &lt;<b>figcaption</b>&gt;Chart 1.1&lt;/figcaption&gt;
+    &lt;<b>figcaption</b>&gt;Ilustración 1.1&lt;/figcaption&gt;
   &lt;/figure&gt;
 
   &lt;<b>footer</b>&gt;
-   Copyright &copy;<br>   &lt;<b>time</b> <b>datetime</b>="2010-11-08"&gt;2010&lt;/time&gt;.
+   Copyright &copy;<br>   &lt;<b>time</b> <b>datetime</b>="2013-11-30"&gt;2013&lt;/time&gt;.
   &lt;/footer&gt;
 &lt;/body&gt;
 </pre>
@@ -1366,45 +1375,45 @@ window.addEventListener('<em>deviceorientation</em>', function(event) {
         </div>
 
         <div class="slide semantics" id="semantic-tags-2">
-          <header><span class="html">HTML</span> <h1>Markup for applications</h1></header>
+          <header><span class="html">HTML</span> <h1>Tags para aplicaciones</h1></header>
           <section>
             <pre>
-&lt;input <b>list</b>="cars"/&gt;
-&lt;<b>datalist</b> id="cars"&gt;
-  &lt;option value="BMW"/&gt;
-  &lt;option value="Ford"/&gt;
-  &lt;option value="Volvo"/&gt;
+&lt;input <b>list</b>="personajes"/&gt;
+&lt;<b>datalist</b> id="personajes"&gt;
+  &lt;option value="Rincewind"/&gt;
+  &lt;option value="DosFlores"/&gt;
+  &lt;option value="La Muerte"/&gt;
 &lt;/<b>datalist</b>&gt;
-<input id="cars-input" placeholder="You should see an autocomplete menu as you type" list="cars" />
-<datalist id="cars">
-  <option value="BMW" />
-  <option value="Ford" />
-  <option value="Volvo" />
+<input id="cars-input" placeholder="Deberías ver las opciones superiores para autocompletado" list="personajes" />
+<datalist id="personajes">
+  <option value="Rincewind" />
+  <option value="DosFlores" />
+  <option value="La Muerte" />
 </datalist>
 &lt;<b>menu</b>&gt;
-  &lt;<b>command</b> type="command" disabled label="Publish" /&gt;
+  &lt;<b>command</b> type="command" disabled label="Publicar" /&gt;
 &lt;/<b>menu</b>&gt;
 
 &lt;<b>details</b>&gt;
   &lt;<b>summary</b>&gt;HTML 5&lt;/<b>summary</b>&gt;
-  This slide deck teaches you everything you need to know about HTML 5.
+  Esta presentación es una introduccción a HTML5.
 &lt;<b>/details</b>&gt;
-<details><summary>HTML 5</summary>This slide deck teaches you everything you need to know about HTML 5.</details>
+<details><summary>HTML 5</summary>Esta presentación es una introducción a HTML5</details>
 </pre>
 
 <pre>&lt;<b>meter</b> <b>min</b>="0" <b>max</b>="100" <b>low</b>="40" <b>high</b>="90" <b>optimum</b>="100" value="91"&gt;A+&lt;/<b>meter</b>&gt;
-Your score is: <meter value="91" min="0" max="100" low="40" high="90" optimum="100">A+</meter><br>
-&lt;<b>progress</b>&gt;working...&lt;/<b>progress</b>&gt;
-Download is: <progress>working...</progress><br>
-&lt;<b>progress</b> value="75" <b>max</b>="100"&gt;3/4 complete&lt;/<b>progress</b>&gt;
-Goal is: <progress value="75" max="100">3/4 complete</progress>
+Tu puntuación: <meter value="91" min="0" max="100" low="40" high="90" optimum="100">A+</meter><br>
+&lt;<b>progress</b>&gt;(en progreso)...&lt;/<b>progress</b>&gt;
+Descargando: <progress>(en proceso)...</progress><br>
+&lt;<b>progress</b> value="75" <b>max</b>="100"&gt;completados 3 de 4&lt;/<b>progress</b>&gt;
+Objetivo: <progress value="75" max="100">completados 3 de 4</progress>
 </pre>
 
           </section>
         </div>
 
         <div class="slide semantics" id="link-relations">
-          <header><span class="html">HTML</span> <h1>Descriptive link relations</h1></header>
+          <header><span class="html">HTML</span> <h1>Relaciones de enlaces descriptivas</h1></header>
           <section>
             <pre>&lt;link <b>rel="alternate"</b> type="application/rss+xml" href="http://myblog.com/feed"/&gt;
 &lt;link <b>rel="icon"</b> href="/favicon.ico"/&gt;
@@ -1412,11 +1421,11 @@ Goal is: <progress value="75" max="100">3/4 complete</progress>
 &lt;link <b>rel="prefetch"</b> href="http://myblog.com/main.php"/&gt;
 ...
 
-&lt;a <b>rel="archives"</b> href="http://myblog.com/archives"&gt;<span class="underlined">old posts</span>&lt;/a&gt;
+&lt;a <b>rel="archives"</b> href="http://myblog.com/archives"&gt;<span class="underlined">viejos art&iacute;culos</span>&lt;/a&gt;
 &lt;a <b>rel="external"</b> href="http://notmysite.com"&gt;<span class="underlined">tutorial</span>&lt;/a&gt;
-&lt;a <b>rel="license"</b> href="http://www.apache.org/licenses/LICENSE-2.0"&gt;<span class="underlined">license</span>&lt;/a&gt;
-&lt;a <b>rel="nofollow"</b> href="http://notmysite.com/sample"&gt;<span class="underlined">wannabe</span>&lt;/a&gt;
-&lt;a <b>rel="tag"</b> href="http://myblog.com/category/games"&gt;<span class="underlined">games posts</span>&lt;/a&gt;
+&lt;a <b>rel="license"</b> href="http://www.apache.org/licenses/LICENSE-2.0"&gt;<span class="underlined">licencia</span>&lt;/a&gt;
+&lt;a <b>rel="nofollow"</b> href="http://notmysite.com/sample"&gt;<span class="underlined">blog recomendado</span>&lt;/a&gt;
+&lt;a <b>rel="tag"</b> href="http://myblog.com/category/games"&gt;<span class="underlined">artículos sobre juegos</span>&lt;/a&gt;
 ...
 </pre>
 
@@ -1424,35 +1433,36 @@ Goal is: <progress value="75" max="100">3/4 complete</progress>
         </div>
 
         <div class="slide semantics" id="microdata">
-          <header><span class="html">HTML</span> <h1>Microdata</h1></header>
+          <header><span class="html">HTML</span> <h1>Microdatos</h1></header>
 
           <section>
             <pre>&lt;div <b>itemscope itemtype="http://example.org/band"</b>&gt;
- &lt;p&gt;My name is &lt;span <b>itemprop="name"</b>&gt;Neil&lt;/span&gt;.&lt;/p&gt;
- &lt;p&gt;My band is called &lt;span <b>itemprop="band"</b>&gt;Four Parts Water&lt;/span&gt;.&lt;/p&gt;
- &lt;p&gt;I am &lt;span <b>itemprop="nationality"</b>&gt;British&lt;/span&gt;.&lt;/p&gt;
+ &lt;p&gt;Mi nombre es &lt;span <b>itemprop="name"</b>&gt;Mustrum Ridcully&lt;/span&gt;.&lt;/p&gt;
+ &lt;p&gt;Mi banda es la &lt;span <b>itemprop="band"</b>&gt;Soul Music Rock Band&lt;/span&gt;.&lt;/p&gt;
+ &lt;p&gt;Soy <b>itemprop="nationality"</b>&gt;Morporkiano&lt;/span&gt;.&lt;/p&gt;
 &lt;/div&gt;
 </pre>
             <figure>
               <img id="microdata-screenshot" src="src/magpie.png" alt="Google Rich Snippets Tool screenshot" />
-              <figcaption>Rich Snippets Testing Tool at <a href="http://www.google.com/webmasters/tools/richsnippets">http://www.google.com/webmasters/tools/richsnippet</a></figcaption>
+              <figcaption>Rich Snippets Testing Tool: <a href="http://www.google.com/webmasters/tools/richsnippets">http://www.google.com/webmasters/tools/richsnippet</a></figcaption>
             <figure>
           </section>
         </div>
 
 
         <div class="slide semantics" id="aria-attributes">
-          <header><span class="html">HTML</span> <h1>ARIA attributes</h1></header>
+          <header><span class="html">HTML</span> <h1>Atributos ARIA (accesibilidad)</h1></header>
           <section>
             <pre>&lt;ul id="tree1"
       <b>role</b>="<b>tree</b>"
       tabindex="0"
       <b>aria-labelledby</b>="label_1">
-  &lt;li <b>role</b>="<b>treeitem</b>" tabindex="-1" <b>aria-expanded</b>="true">Fruits&lt;/li>
+  &lt;li <b>role</b>="<b>treeitem</b>" tabindex="-1" <b>aria-expanded</b>="true">Razas&lt;/li>
   &lt;li <b>role</b>="<b>group</b>">
     &lt;ul>
-      &lt;li <b>role</b>="<b>treeitem</b>" tabindex="-1">Oranges&lt;/li>
-      &lt;li <b>role</b>="<b>treeitem</b>" tabindex="-1">Pineapples&lt;/li>
+      &lt;li <b>role</b>="<b>treeitem</b>" tabindex="-1">Humanos&lt;/li>
+      &lt;li <b>role</b>="<b>treeitem</b>" tabindex="-1">Enanos&lt;/li>
+      &lt;li <b>role</b>="<b>treeitem</b>" tabindex="-1">Trolls&lt;/li>
       ...
     &lt;/ul>
   &lt;/li>
@@ -1462,31 +1472,31 @@ Goal is: <progress value="75" max="100">3/4 complete</progress>
         </div>
 
         <div class="slide semantics" id="new-form-types">
-          <header><span class="html">HTML</span> <h1>New form types</h1></header>
+          <header><span class="html">HTML</span> <h1>Nuevos tipos para formularios</h1></header>
 
           <section>
             <pre>
 &lt;style&gt;
   [required] {
     border-color: #88a;
-    -webkit-box-shadow: 0 0 3px rgba(0, 0, 255, .5);
+    box-shadow: 0 0 3px rgba(0, 0, 255, .5);
   }
   :invalid {
     border-color: #e88;
-    -webkit-box-shadow: 0 0 5px rgba(255, 0, 0, .8);
+    box-shadow: 0 0 5px rgba(255, 0, 0, .8);
   }
 &lt;/style&gt;
 </pre>
 <pre class="form-inputs">
 <input type="text" required />&lt;input type="text" <b>required</b> /&gt;
 
-<input type="email" value="some@email.com" />&lt;input type="<b>email</b>" value="some@email.com" /&gt;
+<input type="email" value="decano@universidad-invisible.am" />&lt;input type="<b>email</b>" value="universidad-invisible.am" /&gt;
 
 <input type="date" min="2010-08-14" max="2011-08-14" value="2010-08-14" />&lt;input type="<b>date</b>" <b>min</b>="2010-08-14" <b>max</b>="2011-08-14" value="2010-08-14"/&gt;
 
 <input type="range" min="0" max="50" value="10" />&lt;input type="<b>range</b>" <b>min</b>="0" <b>max</b>="50" value="10" /&gt;
 
-<input results="10" type="search" placeholder="Search..." />&lt;input type="<b>search</b>" <b>results</b>="10" <b>placeholder</b>="Search..." /&gt;
+<input results="10" type="search" placeholder="Buscar..." />&lt;input type="<b>search</b>" <b>results</b>="10" <b>placeholder</b>="Buscar..." /&gt;
 
 <input type="tel" placeholder="(555) 555-5555" pattern="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$" />&lt;input type="<b>tel</b>"  <b>placeholder</b>="(555) 555-5555"
          <b>pattern</b>="^\(?\d{3}\)?[-\s]\d{3}[-\s]\d{4}.*?$" /&gt;
@@ -1500,7 +1510,7 @@ Goal is: <progress value="75" max="100">3/4 complete</progress>
         </div>
 
         <div class="slide semantics" id="form-types-mobile">
-          <header><span class="html">HTML</span> <h1>Form field types on mobile</h1></header>
+          <header><span class="html">HTML</span> <h1>Tipos de campo en móviles</h1></header>
           <style type="text/css" media="screen">
             #form-types-mobile div {
               float: left;
@@ -1517,29 +1527,29 @@ Goal is: <progress value="75" max="100">3/4 complete</progress>
             <div>
 <pre>type="<em>text</em>"</pre>
               <figure>
-                <img src="src/android-form-text.png" alt="android keyboard on input type text" />
-                <figcaption>Android Device</figcaption>
+                <img src="src/android-form-text.png" alt="teclado android par el tipo text" />
+                <figcaption>Android</figcaption>
               </figure>
             </div>
             <div>
 <pre>type="<em>number</em>"</pre>
               <figure>
-                <img src="src/android-form-number.png" alt="android keyboard on input type number" />
-                <figcaption>Android Device</figcaption>
+                <img src="src/android-form-number.png" alt="teclado android par el tipo number" />
+                <figcaption>Android</figcaption>
               </figure>
             </div>
             <div>
 <pre>type="<em>email</em>"</pre>
               <figure>
-                <img src="src/iphone-form-email.png" alt="iphone keyboard on input type email" />
-                <figcaption>iPhone Device</figcaption>
+                <img src="src/iphone-form-email.png" alt="teclado iphone par el tipo email" />
+                <figcaption>iPhone</figcaption>
               </figure>
             </div>
             <div>
 <pre>type="<em>tel</em>"</pre>
               <figure>
-                <img src="src/iphone-form-tel.png" alt="iphone keyboard on input type tel" />
-                <figcaption>iPhone Device</figcaption>
+                <img src="src/iphone-form-tel.png" alt="teclado iphone par el tipo  tel" />
+                <figcaption>iPhone</figcaption>
               </figure>
             </div>
           </section>
@@ -1555,7 +1565,7 @@ Goal is: <progress value="75" max="100">3/4 complete</progress>
         </div>
 
         <div class="slide multimedia" id="video-audio">
-          <header><span class="html">HTML</span> <span class="js">JS</span> <h1>Audio + Video</h1></header>
+          <header><span class="html">HTML</span> <span class="js">JS</span> <h1>Audio + Vídeo</h1></header>
           <section>
             <pre>&lt;<b>audio</b> id="audio" src="sound.mp3" <b>controls</b>&gt;&lt;/audio&gt;
 document.getElementById("audio").<b>muted</b> = false;
@@ -1565,17 +1575,17 @@ document.getElementById("audio").<b>muted</b> = false;
 document.getElementById("video").<b>play</b>();
 </pre>
             <div id="video-column" class="center">
-              <input type="button" id="reflection-button" onclick="addReflection()" value="Add CSS reflection to video" />
+              <input type="button" id="reflection-button" onclick="addReflection()" value="Añadir CSS 'reflection' al vídeo" />
               <video width="390" id="clip" controls>
                 <source src="src/chrome_japan.webm" type='video/webm; codecs="vp8, vorbis"' />
                 <source src="src/chrome_japan.mp4" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"' />
                 <source src="src/chrome_japan.ogv" type='video/ogg; codecs="theora, vorbis"' />
-                Your browser does not support the video tag
+                Tu navegador no soporta el tag video
               </video>
               <div class="media-buttons">
-                <input type="button" id="play-button" onclick="PlayVideo()"; value="Play" />
-                <input type="button" id="pause-button" onclick="PauseVideo()"; value="Pause" disabled />
-                <input type="button" id="mute" onclick="MuteUnMute()" value="Mute" />
+                <input type="button" id="play-button" onclick="PlayVideo()"; value="Reproducir" />
+                <input type="button" id="pause-button" onclick="PauseVideo()"; value="Pausar" disabled />
+                <input type="button" id="mute" onclick="MuteUnMute()" value="Audio" />
               </div>
             </div>
 
@@ -1583,12 +1593,12 @@ document.getElementById("video").<b>play</b>();
               <audio id="audio-clip" width="670" controls>
                 <source src="src/rushus-modal_blues.mp3" type="audio/mpeg" />
                 <source src="src/rushus-modal_blues.ogg" type="audio/ogg" />
-                Your browser does not support the audio tag
+                Tu navegador no soporta el tag audio
               </audio>
               <div class="media-buttons">
-                <input type=button id="audio-play-button" onclick="PlayAudio()" value="Play" />
-                <input type=button id="audio-pause-button" onclick="PauseAudio()" value="Pause" disabled />
-                <input type=button id="audio-mute" onclick="MuteUnMuteAudio()" value="Mute" />
+                <input type=button id="audio-play-button" onclick="PlayAudio()" value="Reproducir" />
+                <input type=button id="audio-pause-button" onclick="PauseAudio()" value="Pausar" disabled />
+                <input type=button id="audio-mute" onclick="MuteUnMuteAudio()" value="Audio" />
               </div>
             </div>
           </section>
@@ -1610,7 +1620,7 @@ document.getElementById("video").<b>play</b>();
             }
 
             function MuteUnMute() {
-              document.getElementById('mute').value = videoClip.muted ? 'Mute' : 'Unmute';
+              document.getElementById('mute').value = videoClip.muted ? 'Audio' : 'Sin audio';
               videoClip.muted = videoClip.muted ? false : true;
             }
 
@@ -1643,7 +1653,7 @@ document.getElementById("video").<b>play</b>();
             }
 
             function MuteUnMuteAudio() {
-              document.getElementById('audio-mute').value = audioClip.muted ? 'Mute' : 'Unmute';
+              document.getElementById('audio-mute').value = audioClip.muted ? 'Audio' : 'Sin audio';
               audioClip.muted = audioClip.muted ? false : true;
             }
 
@@ -1670,13 +1680,13 @@ document.getElementById("video").<b>play</b>();
               margin-top: 20px;
             }
           </style>
-          <header><span class="html">HTML</span> <span class="js">JS</span> <h1>Track Element</h1></header>
+          <header><span class="html">HTML</span> <span class="js">JS</span> <h1>Track</h1></header>
           <section>
 <pre>
 &lt;<b>video</b> width="390" id="clip" <b>controls</b>>
   &lt;<b>source</b> src="Google_Developer_Stories.webm"
           type='video/webm; codecs="vp8, vorbis"' />
-  &lt;<b>track</b> label="English subtitles" kind="subtitles" srclang="en"
+  &lt;<b>track</b> label="Subtítulos en inglés" kind="subtitles" srclang="en"
          src="<em>video-subtitles-en.vtt</em>" default />
 &lt;/<b>video</b>>
 </pre>
@@ -1684,7 +1694,7 @@ document.getElementById("video").<b>play</b>();
             <video width="390" id="clip" class="playr_video" controls>
               <source src="src/Google_Developer_Stories.webm" type='video/webm; codecs="vp8, vorbis"' />
               <track label="English subtitles" kind="subtitles" srclang="en" src="src/video-subtitles-en.vtt" default />
-              Your browser does not support the video tag
+              Tu navegador no soporta el tag video
             </video>
           </div>
 
@@ -1813,7 +1823,7 @@ Change is important to the Web. Help us keep changing it together
               background-color: white;
             }
             pre:-webkit-full-screen:after {
-              content: 'Only one element can be targeted for full screen';
+              content: ' * Solo un elemento puede ser estar a pantalla completa *';
             }
             .tohide {
               display: none;
@@ -1845,8 +1855,8 @@ pre<b>:-webkit-full-screen</b> {
 </pre>
 
         <div id="fs">
-          <button id="slide-fs">Toggle slide fullscreen</button>
-          <button id="snippet-fs">Toggle snippet fullscreen</button>
+          <button id="slide-fs">Pantalla completa</button>
+          <button id="snippet-fs">Pantalla completa sobre un elemento</button>
           <div class="tohide"><small>close: 'ENTER' or 'ESC'</small></div>
         </div>
 
@@ -1929,7 +1939,7 @@ pre<b>:-webkit-full-screen</b> {
 
 
         <div class="slide effects" id="canvas-2d-example">
-          <header><span class="html">HTML</span> <span class="js">JS</span> <h1>Canvas example</h1></header>
+          <header><span class="html">HTML</span> <span class="js">JS</span> <h1>Ejemplo de Canvas</h1></header>
           <section>
             <div id="canvas-example" class="example">
               <iframe _src="src/canvasphoto/index.html" scrolling="no"></iframe>
@@ -1961,13 +1971,13 @@ pre<b>:-webkit-full-screen</b> {
             <pre>&lt;html&gt;
   &lt;svg width="300px" height="300px"&gt;
     &lt;defs&gt;
-      &lt;linearGradient id="<b>myGradient</b>" x1="0%" y1="100%" x2="100%" y2="0%"&gt;
+      &lt;linearGradient id="<b>miGradiente</b>" x1="0%" y1="100%" x2="100%" y2="0%"&gt;
         &lt;stop offset="5%" stop-color="red"&gt;&lt;/stop&gt;
         &lt;stop offset="95%" stop-color="blue" stop-opacity="0.5"&gt;&lt;/stop&gt;
       &lt;/linearGradient&gt;
     &lt;/defs&gt;
     &lt;circle id="myCircle" class="important" cx="50%" cy="50%" r="<span id="svg-circle-r-value">100</span>" <input id="svg-circle-r" type="range" min="50" max="150" value="100" onchange="changeSvgCircleRadius()"/>
-        fill="<b>url(#myGradient)</b>" onmousedown="alert('hello');"/&gt;
+        fill="<b>url(#miGradiente)</b>" onmousedown="alert('hello');"/&gt;
   &lt;/svg&gt;</b>
 &lt;/html&gt;</pre>
 
@@ -1985,7 +1995,7 @@ pre<b>:-webkit-full-screen</b> {
             // our linearGradient
             var defs = document.createElementNS(svgns, 'defs');
             var gradient = document.createElementNS(svgns, 'linearGradient');
-            gradient.setAttribute('id', 'myGradient');
+            gradient.setAttribute('id', 'miGradiente');
             gradient.setAttribute('x1', '0%');
             gradient.setAttribute('y1', '100%');
             gradient.setAttribute('x2', '100%');
@@ -2007,7 +2017,7 @@ pre<b>:-webkit-full-screen</b> {
             circle.setAttribute('cx', '50%');
             circle.setAttribute('cy', '50%');
             circle.setAttribute('r', 100);
-            circle.setAttribute('fill', 'url(#myGradient)');
+            circle.setAttribute('fill', 'url(#miGradiente)');
             circle.setAttribute('stroke-color', 'red');
             circle.addEventListener('mousedown', function() {
               alert('hello');
@@ -2026,7 +2036,7 @@ pre<b>:-webkit-full-screen</b> {
         </div>
 
         <div class="slide effects" id="svg-example-slide">
-          <header><span class="html">HTML</span> <h1>SVG example</h1></header>
+          <header><span class="html">HTML</span> <h1>Ejemplo de SVG</h1></header>
           <section>
             <div id="svg-example"></div>
           </section>
@@ -2039,15 +2049,15 @@ pre<b>:-webkit-full-screen</b> {
         <div class="slide transitionSlide" id="css3-title">
           <section class="middle">
             <h2>CSS3</h2>
-            <p>Presentation &amp; Styling</p>
+            <p>Presentación y estilo</p>
             <img src="http://www.html5rocks.com/static/images/identity/classes_64/HTML5_Styling_64.png" title="HTML5 Styling" alt="HTML5 Styling">
           </section>
         </div>
 
         <div class="slide styling" id="css-selectors">
-          <header><span class="css">CSS</span> <h1>CSS Selectors</h1></header>
+          <header><span class="css">CSS</span> <h1>Selectores CSS</h1></header>
           <section class="left">
-            <h2>Selectors</h2>
+            <h2>Nuevos selectores</h2>
 <pre>.row:<b>nth-child(even)</b> {
   background: #dde;
 }
@@ -2056,12 +2066,12 @@ pre<b>:-webkit-full-screen</b> {
 }
 </pre>
             <div class="example">
-              <div class="row">Row 1</div>
-              <div class="row">Row 2</div>
-              <div class="row">Row 3</div>
-              <div class="row">Row 4</div>
+              <div class="row">Fila 1 (odd)</div>
+              <div class="row">Fila 2 (even)</div>
+              <div class="row">Fila 3 (odd)</div>
+              <div class="row">Fila 4 (even)</div>
             </div>
-            <h2>Image-like display</h2>
+            <h2>Display tipo imagen</h2>
             <pre>div {
   display: <b>inline-block</b>;
 }
@@ -2069,12 +2079,12 @@ pre<b>:-webkit-full-screen</b> {
           </section>
 
           <section class="right">
-            <h2>Specific attributes</h2>
+            <h2>Atributos específicos</h2>
             <pre>input<b>[type="text"]</b> {
   background: #eee;
 }</pre>
 
-            <h2>Negation</h2>
+            <h2>Negación</h2>
             <pre><b>:not</b>(.box) {
   color: #00c;
 }
@@ -2083,14 +2093,14 @@ pre<b>:-webkit-full-screen</b> {
 }
 </pre>
 
-            <h2>More specific targetting</h2>
-            <pre>h2:<b>first-child</b> { ... }
+            <h2>Otros más específicos</h2>
+            <pre>h2:<b>first-child</b> { ... } // 1<sup>er</sup> hijo
 
-div.text <b>&gt;</b> div { ... }
-h2 <b>+</b> header { ... }
+div.text <b>&gt;</b> div { ... } // hijo directo
+h2 <b>+</b> header { ... } // siguiente elem.
 </pre>
           </section>
-          <footer><a href="http://www.w3.org/TR/CSS2/selector.html#pattern-matching">CSS2 selectors</a> and <a href="http://www.w3.org/TR/css3-selectors/#selectors">CSS3 selectors</a> introduced some of the ones demonstrated here.</footer>
+          <footer>Ver los <a href="http://www.w3.org/TR/CSS2/selector.html#pattern-matching">selectores CSS2</a> y <a href="http://www.w3.org/TR/css3-selectors/#selectors">selectores CSS3</a></footer>
         </div>
 
 
@@ -2113,8 +2123,10 @@ header {
 }</pre>
 
             <div id="fontface-sample" class="example">
-              <span>LeagueGothic font with no image replacement</span>
+              <span>Tipografía LeagueGothic sin utilizar imágenes</span>
             </div>
+
+            <p>Muy extendido para añadir iconos, por ejemplo con <a href="http://fontawesome.io/">FontAwesome</a>, <a href="http://iconmonstr.com/">iconmonstr</a>, etc...</p>
 
           </section>
         </div>
@@ -2126,21 +2138,25 @@ header {
             <pre>div {
   <b>text-overflow: ellipsis;</b>
 }</pre>
-
             <div id="wrapping">
               <div id="overflow-hidden" class="example">
-                A long cold winter delayed the blossoming of the millions of cherry, apricot, peach, and prune plum trees covering hundreds of square miles of the Valley floor. Then, unlike many years, the rains that followed were light and too early to knock the blossoms from their branches.
+                "Hay una puerta". "¿A dónde va?" "Se queda donde está, me parece". "¿Y si utilizas la magía para averiguarlo". Rincewind eran tan dado a la magia como los peces al alpinismo.
               </div>
+
+              <p>Con <code>{ white-space: no-wrap }</code> forzamos que no haya saltos de linea.</p>
+
+
               <div id="no-wrap" class="example">
-                A long cold winter delayed the blossoming of the millions of cherry, apricot, peach, and prune plum trees covering hundreds of square miles of the Valley floor. Then, unlike many years, the rains that followed were light and too early to knock the blossoms from their branches.
+                "Hay una puerta". "¿A dónde va?" "Se queda donde está, me parece". "¿Y si utilizas la magía para averiguarlo". Rincewind eran tan dado a la magia como los peces al alpinismo.
               </div>
+
               <div id="ellipsis" class="example">
-                A long cold winter delayed the blossoming of the millions of cherry, apricot, peach, and prune plum trees covering hundreds of square miles of the Valley floor. Then, unlike many years, the rains that followed were light and too early to knock the blossoms from their branches.
+                "Hay una puerta". "¿A dónde va?" "Se queda donde está, me parece". "¿Y si utilizas la magía para averiguarlo". Rincewind eran tan dado a la magia como los peces al alpinismo.
               </div>
             </div>
             <input type="range" min="0" max="100" value="95" onchange="changeWrapping(event)">
             <p class="center">
-              Play with the slider on this and further pages!
+              Mueve el deslizador para redimensionar las cajas
             </p>
           </section>
 
@@ -2154,7 +2170,7 @@ header {
 
 
         <div class="slide styling" id="css-columns">
-          <header><span class="css">CSS</span> <h1>Columns</h1></header>
+          <header><span class="css">CSS</span> <h1>Columnas</h1></header>
           <section>
             <pre>-webkit-<b>column-count</b>: <span id="columns-no-value">2</span>; <input type="range" min="1" max="6" value="2" onchange="changeColumnNoSlider(event)">
 -webkit-<b>column-rule</b>: 1px solid #bbb;
@@ -2162,42 +2178,22 @@ header {
 
             <div id="columns-no-example" class="example">
               <p>
-                In March 1936, an unusual confluence of forces occurred in
-                Santa Clara County.
+                Havelock Vetinari es el gobernante de Ankh-Morpork.
               </p>
               <p>
-                A long cold winter delayed the blossoming of the millions of
-                cherry, apricot, peach, and prune plum trees covering hundreds
-                of square miles of the Valley floor. Then, unlike many years,
-                the rains that followed were light and too early to knock
-                the blossoms from their branches.
+               Ankh-Morpork tiene como sistema de gobierno ese tipo de democracia que se define por “un hombre, un voto”, en este caso el hombre es el Patricio y el voto el suyo.
               </p>
               <p>
-                Instead, by the billions, they all burst open at once.
-                Seemingly overnight, the ocean of green that was the Valley
-                turned into a low, soft, dizzyingly perfumed cloud of pink
-                and white. Uncounted bees and yellow jackets, newly born,
-                raced out of their hives and holes, overwhelmed by this
-                impossible banquet.
+                Sus costumbres son muy espartanas, no le gusta el lujo ni los excesos. Su comida suele consistir en una rebanada de pan y un vaso de agua, considerándolo algo sobrio y suficiente.
               </p>
               <p>
-                Then came the wind.
+                La principal afición de Lord Vetinari es trabajar. Se pasa todo el día trabajando y está al corriente de todo lo que ocurre en la ciudad y el Mundodisco, gracias a su extensa red de espías. Es siempre el primero en levantarse por la mañana y el último en acostarse por la noche, hasta el punto de que muchas veces la hora de irse a la cama solo es una excusa para cambiarse de traje. También le gusta la música, pero le parece indigno ponerla en contacto con pieles tensadas en tambores y cuerdas hechas de tripas de gato, por lo que prefiere leerla directamente en las partituras.
               </p>
               <p>
-                It roared off the Pacific Ocean, through the nearly
-                uninhabited passes of the Santa Cruz Mountains and then,
-                flattening out, poured down into the great alluvial plains
-                of the Valley. A tidal bore of warm air, it tore along the
-                columns of trees, ripped the blossoms apart and carried them
-                off in a fluttering flood of petals like foam rolling up a
-                beach.
+                El único ser conocido por el que siente afecto es su perro Galletas, un terrier muy anciano.
               </p>
               <p>
-                This perfumed blizzard hit Stevens Creek Boulevard, a two-lane
-                road with a streetcar line down its center, that was the main
-                road in the West Valley. It froze traffic, as drivers found
-                themselves lost in a soft, muted whiteout. Only the streetcar,
-                its path predetermined, passed on...
+                El pensamiento político de Lord Vetinari es absolutamente pragmático y se resume en el lema de su familia: "Si non confectus, non reficiat" (si no está roto, no lo arregles). Esto no significa que su gobierno sea totalmente inmovilista ya que las cosas que sí están rotas son arregladas o eliminadas sin compasión.
               </p>
             </div>
           </section>
@@ -2218,6 +2214,9 @@ header {
         <div class="slide styling" id="css-stroke">
           <header><span class="css">CSS</span> <h1>Text stroke</h1></header>
           <section>
+            <p>
+              De momento solo en Chrome
+            </p>
         <pre>div {
   -webkit-<b>text-fill-color</b>: black;
   -webkit-<b>text-stroke-color</b>: red;
@@ -2249,7 +2248,7 @@ header {
 
             <div id="opacity-body">
               <div id="opacity-example">
-                Independent opacity
+                Transparencias
               </div>
             </div>
 
@@ -2274,7 +2273,7 @@ header {
         </div>
 
         <div class="slide styling" id="css-color">
-          <header><span class="css">CSS</span> <h1>Hue/saturation/luminance color</h1></header>
+          <header><span class="css">CSS</span> <h1>Hue/saturación/intensidad del color</h1></header>
           <section>
         <pre>color: <b>hsla</b>(
   <span class="hsl-value" id="hsl-h-value">128</span> <input id="hsl-h" type="range" min="0" max="360" value="128" onchange="changeHSL()">
@@ -2310,7 +2309,7 @@ header {
 
 
          <div class="slide styling" id="rounded-corners">
-          <header><span class="css">CSS</span> <h1>Rounded corners</h1></header>
+          <header><span class="css">CSS</span> <h1>Esquinas redondeadas</h1></header>
           <section>
             <pre>
               face: <b>border-radius</b>: <span id="face-rounded-border-value">0</span>px; <input id="face-rounded-border" type="range" min="0" max="146" value="0" onchange="handleCorner(event)">
@@ -2344,7 +2343,7 @@ header {
 
 
         <div class="slide styling" id="css-gradients">
-          <header><span class="css">CSS</span> <h1>Gradients</h1></header>
+          <header><span class="css">CSS</span> <h1>Gradientes</h1></header>
 
           <section>
             <pre>background-image: <b>linear-gradient</b>(top, <span style="text-shadow: #00abeb 0 0 1px; color: #00abeb">#00abeb</span> 0%, #fff 50%,
@@ -2371,7 +2370,7 @@ header {
         </div>
 
         <div class="slide styling" id="css-shadow">
-          <header><span class="css">CSS</span> <h1>Shadows</h1></header>
+          <header><span class="css">CSS</span> <h1>Sombreados</h1></header>
           <section>
 <pre class="two-column"><b>text-shadow</b>:
   rgba(64, 64, 64, 0.5)
@@ -2386,7 +2385,7 @@ header {
             </pre>
 
             <div id="shadow-example" class="example">
-              Shadows example
+              Ejemplo con sombras
             </div>
 
           </section>
@@ -2420,7 +2419,7 @@ header {
 
 
         <div class="slide styling" id="logo-demo">
-          <header><span class="css">CSS</span> <h1>Instant Web 2.0 (just add sliders)</h1></header>
+          <header><span class="css">CSS</span> <h1>Otros efectos</h1></header>
           <section>
             <pre><b>text-shadow</b>: rgba(0, 0, 0, 0.5) 0 <span id="web20-shadow-value-1">0</span>px <span id="web20-shadow-value-2">0</span>px; <input id="web20-shadow" type="range" min="0" max="9" value="0" onchange="changeWeb20(event)">
 
@@ -2474,9 +2473,9 @@ background:
 
         <div class="slide styling" id="css-background">
 
-          <header><span class="css">CSS</span> <h1>Background enhancements</h1></header>
+          <header><span class="css">CSS</span> <h1>Mejoras del background</h1></header>
           <section>
-            <h2>Background sizing</h2>
+            <h2>Background-size</h2>
             <pre>#logo {
   background: url(logo.gif) center center no-repeat;
   <b>background-size:
@@ -2980,6 +2979,7 @@ window.addEventListener('<em>popstate</em>', function(event) {
     <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
     <script>
       // Check if new appcache is available, load it, and reload page.
+
       if (window.applicationCache) {
         window.applicationCache.addEventListener('updateready', function(e) {
           if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
@@ -2990,17 +2990,6 @@ window.addEventListener('<em>popstate</em>', function(event) {
           }
         }, false);
       }
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', 'UA-15028909-5']);
-      _gaq.push(['_trackPageview']);
-      _gaq.push(['_trackPageLoadTime']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
     </script>
   </body>
 </html>
