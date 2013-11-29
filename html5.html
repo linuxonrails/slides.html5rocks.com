@@ -99,7 +99,7 @@
             <p><small>(<supper>*</supper> y algunas otras nuevas tecnologías web)</small></p>
             <img src="src/html5-insignia.png" />
             <p>
-              <a href="http://www.linuxonrails.com/html5">http://www.linuxonrails.com/html5</a><br />
+              <a href="http://www.linuxonrails.com/html5/html5.html">http://www.linuxonrails.com/html5/html5.html</a><br />
               <a href="https://github.com/linuxonrails/slides.html5rocks.com">https://github.com/linuxonrails/slides.html5rocks.com</a> <em>fork me!</em>
             </p>
           </section>
@@ -2983,55 +2983,172 @@ window.addEventListener('<em>popstate</em>', function(event) {
 </pre>
           </section>
         </div>
-
-
+<!--
         <div class="slide" id="browser-support">
-          <header><h1>See it today?</h1></header>
+          <header><h1>¿Quién soporta HTML5?</h1></header>
           <section>
             <ul class="bullets">
-              <li>Modern Browsers</li>
-              <li>Mobile Browsers</li>
-              <li>Chrome extensions/Firefox Jetpack/Safari extensions</li>
+              <li>Navegadores modernos</li>
+              <li>Navegadores de móviles</li>
+              <li>Soporte con extensiones de Chrome extensions/Firefox Jetpack/Safari extensions</li>
             </ul>
           </section>
         </div>
+-->
 
-
+<!--
         <div class="slide" id="chrome-frame">
-          <header><h1>Chrome Frame</h1></header>
+          <header><h1>Para IE6: Chrome Frame</h1></header>
           <section>
             <ul class="bullets">
-              <li>Minimal effort for bringing IE6, 7 and 8 up to the latest HTML5 technologies</li>
-              <li>Two ways to get your websites ready for Chrome Frame:</li>
+              <li>IE6, 7 y 8 con la última tecnología de HTML5</li>
+              <li>Requiere cambios necesarios:</li>
             </ul>
-            <p>Client side:</p>
+            <p>Desde el lado del cliente:</p>
             <pre>&lt;meta http-equiv="X-UA-Compatible" content="chrome=1"></pre>
-            <p>Server side:</p>
+            <p>Desde el lado del servidor:</p>
             <pre>X-UA-Compatible: chrome=1</pre>
             <p style="font-size: 30px">
-              Try to load this presentation in IE!
+              ¡Prueba a cargar la presentación con IE!
             </p>
           </section>
         </div>
+-->
+        <div class="slide performance">
+          <section>
+            <header>
+              <h1>¿Qué soporta el navegador?</h1>
+            </header>
 
+            <p>Una buena solución es la librería javascript <a href="http://modernizr.com/">Modernizr</a> que detecta todas las features soportadas por el navegador:</p>
+
+<pre>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;meta charset="utf-8"&gt;
+  &lt;title&gt;Dive Into HTML5&lt;/title&gt;
+  <b>&lt;script src="modernizr.min.js"&gt;&lt;/script&gt;</b>
+&lt;/head&gt;
+&lt;body&gt;
+  ...
+</pre>
+
+            <p>añadiendo clases al node raiz <code>html</code>: </p>
+<pre>
+&lt;html class="<b>js flexbox flexboxlegacy canvas canvastext webgl no-touch geolocation</b> [...]
+</pre>
+
+<pre>
+if (<b>Modernizr.canvas</b>) {
+  // dibujemos algunos círculos!
+} else { // no hay soporte (IE6) :(
+}
+</pre>
+          </section>
+        </div>
+
+
+        <div class="slide performance">
+          <section>
+            <header>
+              <h1>¿Qué soporta el navegador?</h1>
+            </header>
+
+            <p>Si solo vas a usar algunas features puedes tú mismo comprobar el soporte.</p>
+
+            <p>Hay varias técnicas, la mayoría de los trucos utilizan la misma técnica sencilla.</p>
+
+            <p>Por ejemplo:
+<pre>
+function supports_history_api() {
+  // Si hay soporte para <b>History API</b> entonces <code>pushState</code> no estará <code>undefined</code>
+  return !!(window.history && <b>history.pushState</b>);
+}
+</pre>
+            </p>
+
+            <p>
+              Otro ejemplo: <br />
+<pre>
+function supports_input_color() {
+  // creamos un input para pruebas
+  var i = document.createElement("input");
+  // cambiamos su atributo type
+  i.setAttribute("type", <b>"color"</b>);
+  // si el navegador lo soporta mantiene el <b>type</b> del input creado
+  return i.<b>type</b> !== "text";
+}
+</pre>
+
+            Mas información en <a href="http://diveintohtml5.info/detect.html#techniques">Dive into HTML5</a>:
+            <a href="http://diveintohtml5.info/everything.html">el apéndice para detectar casi todo</a>.
+          </p>
+          </section>
+        </div>
+
+        <div class="slide performance">
+          <section>
+            <header>
+              <h1>Soporte a toda costa</h1>
+            </header>
+
+            <p>Cuando necesitas que se soporte alguna feature en <strong>todos</strong> los navegadores:</p>
+
+            <p>
+              <a href="https://github.com/Modernizr/Modernizr/wiki/HTML5-Cross-browser-Polyfills">HTML5 Polyfills</a>
+            </p>
+
+            <p>
+              <cite>"The All-In-One Entirely-Not-Alphabetical No-Bullshit Guide to HTML5 Fallbacks"</cite>
+            </p>
+
+            <p></p>
+
+
+          </section>
+        </div>
+
+        <div class="slide">
+          <section class="middle">
+            <h2>¡Gracias a todos!</h2>
+
+            <h3>¿Alguna pregunta?<h3>
+          </section>
+        </div>
 
         <div class="slide" id="formula-outro-slide">
-          <section class="middle formula">
-            HTML5 ~=
-            <span class="html">HTML</span>
-            +
-            <span class="css">CSS</span>
-            +
-            <span class="js">JS</span>
+          <section>
+            <header>
+              <h1>
+                Introducción a HTML5
+              </h1>
+            </header>
+
             <p>
-              HTML5 <em class="stroke">=</em> Next Generation Features for Modern Web Development
+              David Moreno aka <a href="http://www.twitter.com/linuxonrails">@linuxonrails</a>
             </p>
-            <p class="resource-link">
-              <a href="http://slides.html5rocks.com">http://slides.html5rocks.com</a>
-              <a href="http://www.html5rocks.com">http://www.html5rocks.com</a>
+
+            <div class="resource-link">
+              <p>
+                Autoría original de HTML5 Rocks! <a href="http://www.html5rocks.com">http://www.html5rocks.com</a>
+              </p>
+
+              <p>
+                La charla original <a href="http://slides.html5rocks.com">http://slides.html5rocks.com</a>
+              </p>
+              <p>
+                Mi traducción <a href="https://github.com/linuxonrails/slides.html5rocks.com">https://github.com/linuxonrails/slides.html5rocks.com</a> <br />
+                <em>puedes hacer un fork y enviarme correcciones o cacharrear</em><br />
+              </p>
+
+              <p>
+                Y una versión online <a href="http://www.linuxonrails.com/html5/html5.html">http://www.linuxonrails.com/html5/html5.html</a>
+              </p>
             </p>
           </section>
         </div>
+
 
         <div id="speaker-note" class="invisible" style="display: none;"></div>
         <aside id="help" class="sidebar invisible" style="display: none;">
