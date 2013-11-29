@@ -2488,15 +2488,15 @@ background:
 }
 </pre>
             <textarea id="background-textarea"></textarea>
-            <p id="resize-message">Resize me! »</p>
-            <h2>Multiple backgrounds</h2>
+            <p id="resize-message">¡Redimensióname! »</p>
+            <h2>Múltiples imágenes para el fondo</h2>
             <pre>div {
   background: url(src/zippy-plus.png) 10px center no-repeat,
               url(src/gray_lines_bg.png) 0 center repeat-x;
 }
             </pre>
 
-            <div id="background-example" class="example">Test</div>
+            <div id="background-example" class="example">Dos imágenes (rallado y logo de la UI)</div>
             <script defer>
               function changeBackgroundSize(event) {
                 document.getElementById('background-textarea').style.backgroundSize = event.target.value;
@@ -2568,7 +2568,7 @@ border-width: <span id="border_width_value">10</span>px;  <input id="border_widt
 
 
         <div class="slide styling" id="flex-box-1">
-          <header><span class="css">CSS</span> <h1>Flexible Box Model</h1></header>
+          <header><span class="css">CSS</span> <h1>Modelo 'Flex Box'</h1></header>
           <section>
 <pre>.box {
   display: -webkit-<b>box</b>;
@@ -2587,13 +2587,13 @@ border-width: <span id="border_width_value">10</span>px;  <input id="border_widt
 
           <div id="box-orient-example" class="example">
             <div>
-              Box one
+              Caja uno
             </div>
             <div>
-              Box two
+              Caja dos
             </div>
             <div>
-              Box three
+              Caja tres
             </div>
           </div>
 
@@ -2609,7 +2609,7 @@ border-width: <span id="border_width_value">10</span>px;  <input id="border_widt
 
 
         <div class="slide styling" id="flex-box-2">
-          <header><span class="css">CSS</span> <h1>Flexible Box Model</h1></header>
+          <header><span class="css">CSS</span> <h1>Modelo 'Flex Box'</h1></header>
           <section>
 <pre>.box {
     display: -webkit-<b>box</b>;
@@ -2628,7 +2628,7 @@ border-width: <span id="border_width_value">10</span>px;  <input id="border_widt
 </pre>
 
             <div id="box-orient-example-2" class="example">
-              <textarea>change the dropdowns and resize this &lt;textarea></textarea>
+              <textarea>Cambia los desplegables y redimensiona el área de texto</textarea>
             </div>
 
             <script defer>
@@ -2649,22 +2649,22 @@ border-width: <span id="border_width_value">10</span>px;  <input id="border_widt
 
 
         <div class="slide styling" id="css-transitions">
-          <header><span class="css">CSS</span> <h1>Transitions</h1></header>
+          <header><span class="css">CSS</span> <h1>Transiciones</h1></header>
           <section>
 
           <div class="transitions example">
             <div id="transitions-box-1"></div>
           </div>
 
-<pre>#box.left {
+<pre>#box.izquierda {
   margin-left: 0;
 }
-#box.right {
+#box.derecha {
   margin-left: 1000px;
 }
 
-document.getElementById('box').className = 'left'; <button onclick="transitionLeft(1)">Left</button>
-document.getElementById('box').className = 'right'; <button onclick="transitionRight(1)">Right</button>
+document.getElementById('box').className = 'izquierda'; <button onclick="transitionLeft(1)">izquierda</button>
+document.getElementById('box').className = 'derecha'; <button onclick="transitionRight(1)">derecha</button>
 </pre>
 
           <div class="transitions example">
@@ -2675,8 +2675,8 @@ document.getElementById('box').className = 'right'; <button onclick="transitionR
   -webkit-<b>transition</b>: margin-left 1s ease-in-out;
 }
 
-document.getElementById('box').className = 'left'; <button onclick="transitionLeft(2)">Left</button>
-document.getElementById('box').className = 'right'; <button onclick="transitionRight(2)">Right</button>
+document.getElementById('box').className = 'izquierda'; <button onclick="transitionLeft(2)">izquierda</button>
+document.getElementById('box').className = 'derecha'; <button onclick="transitionRight(2)">derecha</button>
 </pre>
 
 
@@ -2693,11 +2693,9 @@ document.getElementById('box').className = 'right'; <button onclick="transitionR
 
 
         <div class="slide styling" id="css-transforms">
-          <header><span class="css">CSS</span> <h1>Transforms</h1></header>
+          <header><span class="css">CSS</span> <h1>Transformaciones</h1></header>
           <section>
-            <p class="center">
-              Hover over me:
-            </p>
+            <p>Rotar, escalar, etc...</p>
             <pre id="threed-example">-webkit-<b>transform</b>: <b>rotateY</b>(45deg);
 -webkit-transform: <b>scaleX</b>(25deg);
 -webkit-transform: <b>translate3d</b>(0, 0, 90deg);
@@ -2715,7 +2713,7 @@ document.getElementById('box').className = 'right'; <button onclick="transitionR
 </pre>
 
             <p class="center">
-              Now press <span class="key">3</span>!
+              Presiona la tecla <span class="key">3</span>
             </p>
           </section>
         </div>
@@ -2743,7 +2741,7 @@ document.getElementById('box').className = 'right'; <button onclick="transitionR
               -webkit-animation-direction: alternate;
             }
           </style>
-          <header><span class="css">CSS</span> <h1>Animations</h1></header>
+          <header><span class="css">CSS</span> <h1>Animaciones</h1></header>
           <section>
 <pre>@-webkit-<b>keyframes</b> <em>pulse</em> {
  <b>from</b> {
@@ -2765,11 +2763,11 @@ div {
 }
 </pre>
             <p id="animation-note">
-              *Please make a better use of it. We don't want a new blink tag ;)
+              <sup>*</sup>Por favor, no lo utilices para molestos parpadeos ;)
             </p>
 
             <div id="animation-example" class="example">
-              Pulse!
+              Ejemplo
             </div>
           </section>
         </div>
@@ -2778,27 +2776,27 @@ div {
        <div class="slide transitionSlide" id="nuts-bolts-title">
           <section class="middle">
             <h2>“Tuercas &amp; Tornillos”</h2>
-            <p>Improvements to the core platform</p>
+            <p>Mejoras a la base</p>
             <img src="http://www.html5rocks.com/static/images/identity/classes_64/HTML5_Performance_64.png" title="HTML5 Performance &amp; Integration" alt="HTML5 Performance &amp; Integration">
           </section>
         </div>
 
 
         <div class="slide performance" id="new-selectors">
-          <header><span class="js">JS</span> <h1>New Selectors</h1></header>
+          <header><span class="js">JS</span> <h1>Nuevos selectores</h1></header>
           <section>
-            <h2>Finding elements by class (DOM API)</h2>
+            <h2>Buscando elementos por su clase (DOM API)</h2>
 
-            <pre>var el = document.getElementById('section1');
+            <pre>var el = document.getElementById('ui');
 el.focus();
 
 var els = document.getElementsByTagName('div');
 els[0].focus();
 
-var els = document.<b>getElementsByClassName</b>('section');
+var els = document.<b>getElementsByClassName</b>('class-name');
 els[0].focus();</pre>
 
-            <h2>Finding elements by CSS syntax (Selectors API)</h2>
+            <h2>Buscando elementos mediante sintaxis CSS (Selectors API)</h2>
 
             <pre>var els = document.<b>querySelectorAll</b>("ul li:nth-child(odd)");
 var tds = document.<b>querySelectorAll</b>("table.test > tr > td");
@@ -2809,15 +2807,16 @@ var el = document.<b>querySelector</b>("table.test > tr > td"); // el == tds[0]
 
 
         <div class="slide performance" id="custom-data">
-          <header><span class="html">HTML</span> <span class="js">JS</span> <h1>Custom data-* attributes</h1></header>
+          <header><span class="html">HTML</span> <span class="js">JS</span> <h1>Atributos data-*</h1></header>
           <section>
-            <h2>Define, store, and retrieve custom data on the DOM.</h2>
-            <pre>&lt;div id="out" <b>data-id</b>="good" <b>data-name</b>="joe" <b>data-screen-name</b>="user1"&gt;&lt;/div&gt;</pre>
+            <h2>Define, almacena y recupera datos en el DOM.</h2>
+            <pre>&lt;div id="tp" <b>data-id</b>="terryp" <b>data-job</b>="escritor" <b>data-screen-name</b>="T. Pratchett"&gt;&lt;/div&gt;</pre>
 
             <pre>
-// Add new data attributes via JS.
+// A&ntilde;adir nuevos atributos mediante JS
 var el = document.querySelector('#out');
 el.setAttribute('<em>data-foo</em>', 'bar');
+// el.data('foo', 'bar'); // ...con jQuery
 
 var html = [];
 for (var key in el.<b>dataset</b>) {
@@ -2827,11 +2826,11 @@ for (var key in el.<b>dataset</b>) {
 el.innerHTML = html.join('');
 </pre>
 
-<p>Output:</p>
+<p>Resultado:</p>
 <pre>
-id: good
-name: joe
-screenName: user1
+id: terryp
+job: escritor
+screenName: T. Pratchett
 foo: bar
 </pre>
           </section>
@@ -2841,20 +2840,21 @@ foo: bar
         <div class="slide performance" id="class-list">
           <header><span class="js">JS</span> <h1>Element.classList</h1></header>
           <section>
-            <pre>&lt;div id="main" class="shadow rounded"&gt;&lt;/div&gt;</pre>
+            <p>Obtener un array de las clases de un elemento</p>
+            <pre>&lt;div id="ejemplo" class="sombreado seleccionado"&gt;&lt;/div&gt;</pre>
             <pre>
-var el = document.querySelector('#main').<b>classList</b>;
-el.<b>add</b>('highlight');
-el.<b>remove</b>('shadow');
-el.<b>toggle</b>('highlight');
+var el = document.querySelector('#ejemplo').<b>classList</b>;
+el.<b>add</b>('resaltado');
+el.<b>remove</b>('sombreado');
+el.<b>toggle</b>('resaltado');
 
-console.log(el.<b>contains</b>('highlight')); // false
-console.log(el.<b>contains</b>('shadow')); // false
+console.log(el.<b>contains</b>('resaltado')); // false
+console.log(el.<b>contains</b>('sombreado')); // false
 console.log(el.<b>classList</b>.toString() == el.className); // true
 </pre>
-<p>Output:</p>
+<p>Resultado:</p>
 <pre>
-&lt;div id="main" class="rounded"&gt;&lt;/div&gt;
+&lt;div id="ejemplo" class="seleccionado"&gt;&lt;/div&gt;
 </pre>
           </section>
         </div>
@@ -2862,17 +2862,19 @@ console.log(el.<b>classList</b>.toString() == el.className); // true
         <div class="slide performance" id="history-api">
           <header><span class="js">JS</span> <h1>History API</h1></header>
           <section>
+            <p>Controlar el historia de navegación</p>
+
             <pre>
 link.addEventListener('click', function(event) {
-  // manually add a value to the history stack
-  // without making the browser load any new page
-  <b>history</b>.<b>pushState</b>('Contact Page Form', 'Contact Page', '/contact');
+  // a&ntilde;ade manualmente un valor a la "pila del histórico"
+  // sin hacer que el navegador cargue una nueva página
+  <b>history</b>.<b>pushState</b>('Formulario de contacto', 'Página de contacto', '/contactar');
 });
 
-// capture navigation in case we want to change,
-// for instance, some content when it changes
+// "capturar" la navegación en caso de que queramos cambiar,
+// por ejemplo, parte del contenido al navegar
 window.addEventListener('<em>popstate</em>', function(event) {
-  document.querySelector('h1').innerHTML = event.<b>state</b>; // 'Contact Page Form'
+  document.querySelector('h1').innerHTML = event.<b>state</b>; // 'Formulario de contacto'
 });
 </pre>
           </section>
@@ -2930,34 +2932,34 @@ window.addEventListener('<em>popstate</em>', function(event) {
         <div id="speaker-note" class="invisible" style="display: none;"></div>
         <aside id="help" class="sidebar invisible" style="display: none;">
           <table>
-            <caption>Help</caption>
+            <caption>Ayuda</caption>
             <tbody>
               <tr>
-                <th>Move Around</th>
+                <th>Cambiar de página</th>
                 <td>&larr;&nbsp;&rarr;</td>
               </tr>
               <tr>
-                <th>Source File</th>
+                <th>Fichero fuente</th>
                 <td>s</td>
               </tr>
               <tr>
-                <th>Change Theme</th>
+                <th>Cambiar (t)ema</th>
                 <td>t</td>
               </tr>
               <tr>
-                <th>Syntax Highlight</th>
+                <th>Resaltado</th>
                 <td>h</td>
               </tr>
               <tr>
-                <th>Speaker Notes</th>
+                <th>Notas</th>
                 <td>n</td>
               </tr>
               <tr>
-                <th>Toggle 3D</th>
+                <th>Cambiar a 3D</th>
                 <td>3</td>
               </tr>
               <tr>
-                <th>Help</th>
+                <th>Ésta ayuda</th>
                 <td>0</td>
               </tr>
             </tbody>
@@ -2984,7 +2986,7 @@ window.addEventListener('<em>popstate</em>', function(event) {
         window.applicationCache.addEventListener('updateready', function(e) {
           if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
             window.applicationCache.swapCache();
-            if (confirm('A new version of this site is available. Load it?')) {
+            if (confirm('Una nueva versión de la página está disponible ¿Desea cargarla?')) {
               window.location.reload();
             }
           }

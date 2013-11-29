@@ -870,10 +870,12 @@ div#wrapping {
   outline: 0;
 }
 #background-example {
+  color: red;
+  font-weight:;
   margin-left: 10px;
   padding-left: 28px;
-  background: url(src/zippy-plus.png) 10px center no-repeat,
-              url(src/gray_lines_bg.png) 0 center repeat-x;
+  background: url(../src/logo.png) right center no-repeat,
+              url(../src/gray_lines_bg.png) 0 center repeat-x;
 }
 #resize-message {
   float: left;
